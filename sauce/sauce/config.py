@@ -1,8 +1,11 @@
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 
-dotenv_path = ".env"
+WORK_DIR = Path(__file__).resolve().parent.parent.parent
+dotenv_path = Path(str(WORK_DIR) + "/.env")
+
 load_dotenv(dotenv_path=dotenv_path)
 
 class TestConfig:

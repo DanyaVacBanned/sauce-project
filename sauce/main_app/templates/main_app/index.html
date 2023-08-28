@@ -1,0 +1,59 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Соус {% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="main-page-header">
+        <div class="main-page-header-logo">
+            <img src="{% static 'main_app/src/svg/logo.svg' %}" alt="Sauce logo">
+        </div>
+        <div class="main-page-header-description-list">
+            <ul>
+                <li class="list-item">
+                    <span>
+                        Поиск вакансий и работы
+                    </span>
+                </li>
+                <li class="list-item">
+                    <span>
+                        Наём сотрудников и специалистов
+                    </span>
+                </li>
+                <li class="list-item">
+                    <span>
+                        Открытая доска объявлений
+                    </span>
+                </li>
+                <li class="list-item">
+                    <span>
+                        Срочные заявки
+                    </span>
+                </li>
+                <li class="list-item">
+                    <span>
+                        Профессиональный форум
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-page-navigation">
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="#">Вход</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="text-wrapping">Информация новости</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+
+{% endblock %}

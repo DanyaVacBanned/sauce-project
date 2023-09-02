@@ -1,9 +1,8 @@
-{% extends 'layout/base.html' %}
+{% extends 'main_app/layout/base.html' %}
+{% load static %}
 
-{% block title %} Соус {% endblock %}
-
-{% block content %}
-
+{% block title %} Соус {% endblock title %}
+{% block header %}
 <section>
     <div class="main-page-header">
         <div class="main-page-header-logo">
@@ -43,10 +42,14 @@
         <nav>
             <ul>
                 <li class="nav-item">
-                    <a href="#">Вход</a>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'profile-page' %}">Профиль</a>
+                    {% else %}
+                    <a href="{% url 'registration' %}">Вход</a>
+                    {% endif %}
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="text-wrapping">Информация новости</a>
+                <li class="nav-item line-break">
+                    <a href="#vacations-block">Информация новости</a>
                 </li>
                 <li class="nav-item">
                     <a href="#">Контакты</a>
@@ -55,5 +58,173 @@
         </nav>
     </div>
 </section>
+{% endblock header %}
 
-{% endblock %}
+{% block content %}
+
+
+<section>
+
+    <div class="main-page-vacations" id="vacations-block">
+        <div class="vacations-title-block">
+            <h2 class="main-page-vacations-title">
+                Вакансии и Специалисты в сферах:
+            </h2>
+        </div>
+        <div class="main-page-vacations-block">
+            <div class="main-page-vacations-block-item">
+                <img src="{% static 'main_app/src/img/black_avtoservice.png' %}" alt="Автосервис">
+                <div class="vacations-block-item-description">
+                    <h4 class="main-page-description-title">
+                        Автосервис и Техничское обслуживание авто:
+                    </h4>
+                    <div class="vacations-description-text vacations-description-text-1">
+                        <ul>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автослесарь
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автомеханик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автослесарь - универсал
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автодиагност
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - мастер приемщик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - инженер по гарантии
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - сервисный инженер
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - механик-моторист
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - механик по ремонту трансмиссии
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - механик по ремонту ходовой части
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - мастер кузовного цеха
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - парковщик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - шиномонтажник
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="vacations-description-text vacations-description-text-2">
+                        <ul>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автожестянщик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автомаляр
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - автоэлектрик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - арматурщик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                - администратор / управляющий станцией технического обслуживания
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main-page-vacations-block-item">
+                <img src="{% static 'main_app/src/img/black_avtomoika.png' %}" alt="Автомойка">
+                <div class="vacations-block-item-description">
+                    <h4 class="main-page-description-title">
+                        Автомойка и услуги по уходу за автомобилями:
+                    </h4>
+                    <div class="vacations-description-text">
+                        <ul>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                    - автомойщик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                    - администратор автомойки
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                    - полировщик
+                                </span>
+                            </li>
+                            <li class="vacations-description-text-item">
+                                <span>
+                                    - специалист детейлинга и химчистки
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section>
+
+    <div class="about-block">
+
+
+
+    </div>
+
+</section>
+
+
+{% endblock content %}

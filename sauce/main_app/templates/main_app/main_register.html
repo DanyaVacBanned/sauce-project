@@ -1,0 +1,23 @@
+{% extends 'main_app/layout/base.html' %}
+
+
+{% block title %} Регистрация {% endblock title %}
+
+{% block content %}
+
+<div class="account-type-container">
+
+    <div class="account-type-btn employer">
+        <a href="{% url 'registration-employer' %}">
+            Работодатель
+        </a>
+    </div>
+
+    <div class="account-type-btn candidate">
+        <a href="{% url 'registration-candidate' %}">
+            Соискатель
+        </a>
+    </div>
+</div>
+
+{% endblock content %}

@@ -4,14 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'main_app/src/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
 <title>{% block title %} {% endblock title %}</title>
 </head>
 <body>
+     <div class="header-block">
+        {% block header %}
+        {% endblock header %}
+    </div>
     <div class="container">
         {% block content %}
         {% endblock content %}
     </div>
+    
     <script src="{% static 'main_app/js/script.js' %}"></script>
 </body>
 </html>

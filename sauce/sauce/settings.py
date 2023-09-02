@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app.apps.MainAppConfig',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -123,28 +123,30 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'main_app.SauceUser'
+# AUTHENTICATION_BACKENDS = (
+#     'main_app.auth.AuthManager', # our custom authentication backend
+    
+#     )
 #Logging
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'main_app_error': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': 'sauce/main_app/logs/errors.log',
-        },
-        'main_app_debug': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'sauce/main_app/logs/debug.log'
-            }
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['main_app_error', 'main_app_debug'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'main_app_error': {
+#             'level': 'ERROR',
+#             'class': 'logging.FileHandler',
+#             'filename': 'sauce/main_app/logs/errors.log',
+#         }
+        
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['main_app_error', 'main_app_debug'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
+

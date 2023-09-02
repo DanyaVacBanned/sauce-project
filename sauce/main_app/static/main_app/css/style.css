@@ -1,0 +1,182 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+
+    text-decoration: none;
+    color: none;
+}
+
+.container {
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Header */
+.header-block {
+
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    
+    
+}
+
+.main-page-header {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../src/img/header-background.jpg");
+    font-size: 24px;
+
+}
+
+.main-page-header-description-list   {
+    margin-left: 5%;
+    font-weight: bold;
+    color:#FE7D29 ;
+    padding-top: 10%;
+    align-items: flex-end;
+
+}
+
+
+/* Navigation*/
+
+
+
+
+.main-page-navigation {
+    display: flex;
+    justify-content: center;    
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav-item {
+    
+    display: inline;
+    font-size: 48px;
+    font-weight: bold;
+    list-style-type: none;
+    
+}
+
+.nav-item a {
+
+    color: red;
+
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+.nav-item a:hover {
+    display: inline-flex;
+    animation: bounce 1s;
+}
+
+.line-break {
+    align-items: flex-start;
+    display: inline-flex;
+    width: 50%;
+    text-align: center;
+    
+}
+
+/* Container vacations */
+
+
+.main-page-vacations-block-item img {
+    height: 150px;
+    width: 150px;
+
+}
+
+.main-page-vacations-block-item {
+    display: inline-flex;
+    align-items: flex-start;
+    
+
+}
+.vacations-block-item-description {
+
+    display: inline;
+    margin-left: 5%;
+}
+
+#vacations-block {
+
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+
+.vacations-title-block {
+
+    display: flex;
+    justify-content: center;
+}
+
+.main-page-vacations-title {
+    
+    color: #FE7B29;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+
+.main-page-vacations-block {
+
+    margin-top: 5%;
+    display: inline-flex;
+    font-size: 12px;
+    justify-content: space-between;
+    
+    
+
+}
+
+
+.vacations-description-text-item {
+
+    list-style-type: none;
+    
+
+}
+
+.vacations-description-text ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+.vacations-description-text {
+    display: inline;
+    flex-direction: row;
+
+}
+
+.main-page-description-title {
+    display: inline-block;
+    font-size: 18px;
+    width: 75%;
+}

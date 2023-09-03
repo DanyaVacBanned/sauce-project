@@ -81,7 +81,7 @@ DATABASES = {
     }
 }
 
-
+ALLOWED_HOSTS = ['194.58.100.194', '127.0.0.1', 'localhost']
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -130,23 +130,23 @@ AUTH_USER_MODEL = 'main_app.SauceUser'
 #     )
 #Logging
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'main_app_error': {
-            'level': 'ERROR',
-            'class': 'logging.FileHandler',
-            'filename': 'sauce/main_app/logs/errors.log',
-        }
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'main_app_error': {
+#             'level': 'ERROR',
+#             'class': 'logging.FileHandler',
+#             'filename': 'sauce/main_app/logs/errors.log',
+#         }
         
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['main_app_error'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['main_app_error'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
 

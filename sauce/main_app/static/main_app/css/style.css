@@ -11,7 +11,10 @@ a {
 .container {
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1800px;
 }
+
+
 /* Header */
 .header-block {
 
@@ -32,32 +35,50 @@ a {
 
 }
 
+
+.main-page-header-logo img {
+
+    width: 25vw;
+    height: 25vw;
+}
+
+
 .main-page-header-description-list   {
     margin-left: 5%;
     font-weight: bold;
     color:#FE7D29 ;
     padding-top: 10%;
     align-items: flex-end;
+    font-size: 1.5vw;
 
 }
 
 
 /* Navigation*/
 
+.back-to-main-page a {
 
+    font-size: 1vw;
+    font-weight: bold;
+    color: red;
+    position: fixed;
+    
+
+
+}
 
 
 .main-page-navigation {
     display: flex;
     justify-content: center;    
     margin: 0 auto;
-    width: 100%;
+    
 }
 
 .nav-item {
     
     display: inline;
-    font-size: 48px;
+    font-size: 5.5vh;
     font-weight: bold;
     list-style-type: none;
     
@@ -103,8 +124,13 @@ a {
 
 
 .main-page-vacations-block-item img {
-    height: 150px;
-    width: 150px;
+    max-width: 100%;
+    max-height: 100%;
+    height: 25vh;
+    width: 15vw;
+    margin-right: 5%;
+    /* height: 20vh;
+    width: 10vw; */
 
 }
 
@@ -112,12 +138,13 @@ a {
     display: inline-flex;
     align-items: flex-start;
     
+    
 
 }
 .vacations-block-item-description {
 
-    display: inline;
-    margin-left: 5%;
+    display: block;
+    
 }
 
 #vacations-block {
@@ -137,7 +164,8 @@ a {
 .main-page-vacations-title {
     
     color: #FE7B29;
-    font-size: 48px;
+    font-size: 2.5vw;
+
     font-weight: bold;
     text-align: center;
     
@@ -147,9 +175,10 @@ a {
 .main-page-vacations-block {
 
     margin-top: 5%;
-    display: inline-flex;
-    font-size: 12px;
+    font-size: 0.7vw;
+    display: flex;
     justify-content: space-between;
+    align-content: center;
     
     
 
@@ -170,13 +199,136 @@ a {
 }
 
 .vacations-description-text {
-    display: inline;
+    display: inline-flex;
     flex-direction: row;
+    
 
 }
 
 .main-page-description-title {
     display: inline-block;
-    font-size: 18px;
+    font-size: 1.2vw;
     width: 75%;
+}
+
+/* Cases */
+
+
+.about-block {
+    padding-top:10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #000;
+    text-align: center;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160.187%; /* 25.63px */
+}
+
+
+.about-block img {
+
+    height: 8vw;
+    width: 9vw;
+}
+
+
+.about-block-item {
+
+    width: 26%;
+
+}
+
+
+.about-block ul {
+
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+
+.about-block li {
+
+
+    list-style-type: none;
+
+}
+
+/* Contacts */
+
+.contacts-block-container {
+
+    display: flex;
+    justify-content: center;
+    padding-right:8vw ;
+    padding-top: 10vw;
+    
+
+}
+
+
+.contacts-block {
+
+    display: inline-flex;
+    justify-content: center;
+    flex-flow: column wrap;
+
+}
+
+
+
+.contacts-block-title h5 {
+    align-self: center;
+    text-align: center;
+    margin-bottom: 1.5vh;
+    color: #000;
+    text-align: center;
+    font-size:1.3vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160.187%;
+}
+
+
+
+.contacts-block-icons {
+    display: inline-flex;
+    margin-bottom: 1.5vh;
+    
+    
+}
+
+.contacts-block-icons img {
+
+    width: 2vw;
+    height: 3.5vh;
+
+}
+
+
+.contacts-block-icon-item {
+    width: 6vh;
+    display: inline-flex;
+    justify-content: center;
+
+}
+
+.contacts-block-info {
+
+    margin-bottom: 5vh;
+
+}
+
+
+.contacts-block-info span {
+
+    font-size: 1vw;
+
 }

@@ -5,18 +5,28 @@
 
 {% block content %}
 
-<div class="account-type-container">
+<nav class="back-to-main-page">
+    <a href="{% url 'main_page' %}">
+        Вернуться назад
+    </a>
+</nav>
 
-    <div class="account-type-btn employer">
-        <a href="{% url 'registration-employer' %}">
-            Работодатель
-        </a>
+<div class="account-type-container">
+    <div class="account-type-btn-block">
+        <form action="{% url 'registration-employer' %}">
+            <button class="account-type-btn employer">
+                Работодатель
+            </button>
+        </form>
+        
     </div>
 
-    <div class="account-type-btn candidate">
-        <a href="{% url 'registration-candidate' %}">
-            Соискатель
-        </a>
+    <div class="account-type-btn-block">
+        <form action="{% url 'registration-candidate' %}">
+            <button class="account-type-btn">
+                Соискатель
+            </button>
+        </form>
     </div>
 </div>
 

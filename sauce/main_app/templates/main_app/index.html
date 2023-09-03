@@ -5,6 +5,7 @@
 {% block header %}
 <section>
     <div class="main-page-header">
+        
         <div class="main-page-header-logo">
             <img src="{% static 'main_app/src/svg/logo.svg' %}" alt="Sauce logo">
         </div>
@@ -220,10 +221,123 @@
 
     <div class="about-block">
 
-
+        <ul>
+            <li class="about-block-item">
+                <div class="about-block-item-div">
+                    <img src="{% static 'main_app/src/img/pepper_to_case.png' %}" class="about-block-item-icon">
+                    <div class="about-block-item-description">
+                        <p>
+                            Регистрация без ввода личных данных, номеров телефонов , ИНН, БИК и&nbsp;прочей бюрократии. Только электронная почта, имя и&nbsp;адрес Вашего объекта . Никакого подвоха нет&nbsp;&mdash; регистрация тоже абсолютно бесплатна.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="about-block-item">
+                <div class="about-block-item-div">
+                    <img src="{% static 'main_app/src/img/pepper_to_case.png' %}" class="about-block-item-icon">
+                    <div class="about-block-item-description">
+                        <p>
+                            Подача и&nbsp;размещение объявлений&nbsp;&mdash; бесплатны
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="about-block-item">
+                <div class="about-block-item-div">
+                    <img src="{% static 'main_app/src/img/pepper_to_case.png' %}" class="about-block-item-icon">
+                    <div class="about-block-item-description">
+                        <p>
+                            Возможность раз в&nbsp;сутки поднимать Ваше объявление и&nbsp;обновлять его актуальность. Не&nbsp;нужно платить за&nbsp;увеличение просмотров или поднятия объявлений. Их&nbsp;и&nbsp;так увидят все специалисты на&nbsp;сайте, после поднятия они и&nbsp;так будут в&nbsp;&laquo;ТОПе объявлений&raquo;. Эти функции полностью бесплатны
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="about-block-item">
+                <div class="about-block-item-div">
+                    <img src="{% static 'main_app/src/img/pepper_to_case.png' %}" class="about-block-item-icon">
+                    <div class="about-block-item-description">
+                        <p>
+                            Вам не&nbsp;нужно платить за&nbsp;доступ к&nbsp;контактам или анкетам соискателей или за&nbsp;пакеты &laquo;просмотров анкет&raquo;. Они все в&nbsp;открытом доступе, с&nbsp;открытыми номерами телефонов (если те&nbsp;их&nbsp;сами указали), с&nbsp;открытыми окнами сообщений и&nbsp;возможностью им&nbsp;бесплатно писать. Эти доступы тоже бесплатны и&nbsp;открыты.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="about-block-item">
+                <div class="about-block-item-div">
+                    <img src="{% static 'main_app/src/img/pepper_to_case.png' %}" class="about-block-item-icon">
+                    <div class="about-block-item-description">
+                        <p>
+                            У&nbsp;нас все анкеты и&nbsp;профили специалистов с&nbsp;фотографиями, с&nbsp;указанием гражданства и&nbsp;с&nbsp;именами&nbsp;&mdash; это обязательные условия для регистрации работников на&nbsp;нашем сайте. Так&nbsp;же при указании ими своих контактных номеров, опыта и&nbsp;профессиональных качеств, это всё отображается в&nbsp;их&nbsp;анкетах открыто и&nbsp;в&nbsp;свободном доступе, для зарегистрированных Работодателей.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="about-block-item">
+                <div class="about-block-item-div">
+                    <img src="{% static 'main_app/src/img/pepper_to_case.png' %}" class="about-block-item-icon">
+                    <div class="about-block-item-description">
+                        <p>
+                            Удобная и&nbsp;быстрая система поиска, без ненужных граф и&nbsp;лишних настроек в&nbsp;фильтрах. Именно потому что у&nbsp;нас профильное сообщество, здесь нет гигантских объёмов информации, среди которой надолго долго перебирать, отсеивать кучу спама и&nbsp;искать нужное
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
 
     </div>
 
+</section>
+
+
+
+<section>
+    <div class="contacts-block-container">
+        <div class="contacts-block">
+
+            <div class="contacts-block-title">
+                <h5>
+                    Контакты
+                </h5>
+            </div>
+
+            <div class="contacts-block-icons">
+                <div class="contacts-block-icon-item phone">
+                    <a href="tel:+79995202008">
+                        <img src="{% static 'main_app/src/img/phone.png' %}" alt="Телефон">
+                    </a>
+                                    
+                </div>
+
+                <div class="contacts-block-icon-item telegram">
+                    <a href="https://t.me/operses">
+                        <img src="{% static 'main_app/src/img/telegram.png' %}" alt="Телеграмм">
+                    </a>
+                </div>
+
+                <div class="contacts-block-icon-item whats-app">
+                    <a href="https://wa.me/79995202008">
+                        <img src="{% static 'main_app/src/img/whatsapp.png' %}" alt="Whats App">
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="contacts-block-info">
+                <div class="contacts-block-info-phone">
+                    <span>
+                        +7 (999) 520-20-08
+                    </span>
+                </div>
+                <div class="contacts-block-info-telegram">
+                    <span>
+                        @operses
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
 

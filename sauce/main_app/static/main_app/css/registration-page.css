@@ -1,0 +1,35 @@
+
+
+.account-type-container {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.account-type-btn{
+
+
+    font-size: 1.5vw;
+    padding: 1vw;
+    margin: 1vw;
+    border: 0.3vw solid;
+    border-radius: 1vw;
+    background-color: #FE7B29;
+    color: white;
+}
+
+.account-type-btn.employer {
+
+    background-color: red;
+
+}
+
+.account-type-btn:hover {
+
+    opacity: 0.6;
+}
+

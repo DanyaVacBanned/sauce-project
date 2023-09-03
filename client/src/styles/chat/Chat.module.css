@@ -1,0 +1,140 @@
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    padding: 0px 0;
+  }
+  .header {
+    width: 100%;
+    background: #7d7070;
+    background:  rgb(254,128,21); 
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .left {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 60px;
+    cursor: pointer;
+  }
+  .down {
+    position: absolute;
+    right: 30px;
+    top: 85px;
+    width: 50px;
+    cursor: pointer;
+  }
+  .form {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(254,128,21, 0.8);
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 20px;
+  }
+  .input {
+    flex-grow: 1;
+    height: 100%;
+  }
+  .input input {
+
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 15px;
+  }
+  .button {
+    text-align: center;
+  }
+  .button input {
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    padding-left: 20px;
+    background: none;
+  }
+  .messages {
+    overflow-y: scroll;
+    flex-grow: 1;
+    width: 100%;
+    height: max-content;
+    color: #fff;
+    font-size: 18px;
+    background: rgb(35, 35, 35);
+    padding: 32px;
+  }
+  .sendImg{
+    display: none;
+  }
+  .message{
+    border: 1px solid rgba(254,128,21, 0.8);
+    border-radius: 10px;
+    width: max-content;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .Mymessage{
+    border: 1px solid rgba(254,23,32, 0.6);
+    border-radius: 10px;
+    background: none;
+    color: white;
+    width: max-content;
+    max-width: 100%;
+    padding: 10px 30px;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  @media screen and (max-width: 428px) {
+    .button input {
+      display: none;
+    }
+    .input input {
+      font-size: 17px;
+      font-weight: 500;
+      padding: 10px;
+    }
+    .form {
+      height: 70px;
+      padding: 0 10px;
+    }
+    .sendImg{
+      display: block;
+      width: 40px;
+      margin-left: 10px;
+    }
+    .left {
+      width: 55px;
+      top: 5px;
+    }
+    .message{
+      font-size: 16px;
+    }
+    .Mymessage{
+      font-size: 16px;
+    }
+  }

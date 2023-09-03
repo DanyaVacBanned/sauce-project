@@ -1,0 +1,1997 @@
+@font-face {
+    font-family: 'Segoe UI', sans-serif;
+    src: url(../fonts/SegoeUI.ttf);
+}
+
+@media screen and (max-width: 1280px) {
+    .myContainer{
+        max-width: 1230px;
+    }
+    .sun-moon{
+        width: 100px;
+        left: 92%;
+        top: 11%;
+    }
+    .paddingTop{
+        padding-top: 8px;
+    }
+    .navbar{
+        .navbar_menu{
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+        .twoString{
+            padding-top: 15px;
+            line-height: 35px;
+        }
+        .widthEight{
+            width: 100% !important;
+        }
+    }
+    .Guest{
+        .header{
+            height: 550.16px;
+            .big_pepper{
+                width: 750px;
+                top: -30px;
+                left: -20px;
+            } 
+            .company_name{
+                top: 10px;
+                left: 330px;
+                font-size: 100px;
+            }
+            ul{
+                left: 65%;
+                font-size: 21px;
+                top: 230px;
+            } 
+        }
+        .guest_navbar .guest_navbar__items  .guest_navbar__item{
+            font-size: 55px;
+        }
+        .main{
+            max-width: 1230px;
+            .avtomoika, .avtoservice{
+                img{
+                    display: none;
+                }
+                .some_info{
+                    p{
+                     font-size: 25px;
+                     margin-left: 0;
+                     text-align: center;
+                    }
+                    ul{
+                     margin-left: 50px;
+                     width: 475px;
+                    } 
+                 }
+            }
+            .avtomoika{
+                width: 49%;
+                padding-left: 30px;
+            }
+            .avtoservice{
+                width: 51%;
+                padding-left: 30px;
+            }
+            .mainImg{
+                display: block !important;
+                img{
+                    width: 30%;
+                    margin-bottom: 35px;
+                    margin: 0 0 35px 150px;
+                }
+                .img1{
+                    margin: 0 18px 35px 150px;
+                }
+            }
+        }
+        .phoneGrid{
+            display: block !important;
+            .float{
+                height: 990px;
+                font-size: 22px;
+                .text{
+                    img{
+                     width: 120px;
+                    }
+                }
+            }
+          .marTopFloat{
+            .text{
+              padding-top: 170px;
+            }
+          }
+          .float1{
+            height: 410px !important;
+          }
+          .float2{
+            height: 350px !important;
+          }
+        }
+        .reserve{
+            font-size: 40px !important;
+        }
+        .contacts__logo{
+            padding-left: 50px !important;
+        }
+
+    }
+    .Entrance{
+        height: 1000px;
+        .upArrowSity, .upArrowSity_rab, .upArrow{
+            left: 66% !important;
+        }
+        .dropdown_sity__spec, .dropdown_sity{
+            left: 44% !important;
+        }
+        .dropdown_specialnost{
+            left: 6% !important;
+            
+        }
+    }
+    .EmpProfile, .ExpProfile{
+        .sun-moon{
+            left: 1%;
+            top: 100px;
+        }
+        .img{
+            img{
+              height: 275px;  
+            }
+        }
+        .mar-top{
+            margin: 0 0 70px 0;
+        }
+        .upArrow, .upArrowSity{
+            left: 89% !important;
+        }
+        .dropdown_specialnost{
+            left: 100px;
+        }
+        .dropdown_sity__spec{
+            left: 300px;
+        }
+        .save{
+            left: 82%;
+        }
+
+    }
+    .Experts{
+        .body{
+            .button{
+                margin-right: 24px;
+                .link .dropdown-menu{
+                    top: 260px;
+                    left: 203px;
+                }
+            }
+        } 
+        .rabotniki{
+            margin: 0 40px;
+            .grid{
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 150px;
+                .rabotnik{
+                    .men_img{
+                        width: 432px;
+                    }
+                }
+            }
+        }
+        .searchButton{
+            margin-right: 10px !important;
+        }
+        .buttonGeo{
+            margin-left: 5px !important;
+            margin-right: 30px;
+        }
+        .my-advertisement{
+            margin-left: 5px !important;
+        }
+        .button{
+            margin-left: 0 !important;
+            margin-right: 20px;
+        }
+    }
+    .Ads_rab, .Ads_exp{
+        .row{
+            margin-top: 20px;
+            .buttonFilters{
+                margin-left: 70px;
+                margin-right: 70px;
+                .link .dropdown-menu{
+                    top: 5px;
+                    left: -280px;
+                }
+            } 
+            .buttonGeo{
+                margin-right: 70px;
+                .sity img{
+                    left: -15px;
+                }
+            }
+            .button{
+                margin-left: 20px;
+            }
+            .buttonAddAds, .buttonBookmarks{
+                margin-top: 30px;
+            }
+        }
+        .rabotniki{
+            margin: 0 40px;
+           .grid{
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 150px;
+           } 
+        }
+        .grid-my-rabotodatel{
+            margin-top: 0;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 150px;  
+        }
+        
+    }
+    .FastAds_rab, .FastAds_exp{
+        .row{
+            margin-top: 20px;
+            .buttonFilters{
+                margin-left: 70px;
+                margin-right: 70px;
+                .link .dropdown-menu{
+                    top: 5px;
+                    left: -280px;
+                }
+            } 
+            .buttonGeo{
+                margin-right: 70px;
+                .sity img{
+                    left: -15px;
+                }
+            }
+            .button{
+                margin-left: 20px;
+            }
+            .buttonAddAds, .buttonBookmarks{
+                margin-top: 30px;
+            }
+            .litleFont{
+                font-size: 16px;
+            }
+        }
+        .rabotniki{
+            margin: 0 40px;
+           .grid{
+            grid-template-columns: 430px 430px;
+            grid-column-gap: 150px;
+           } 
+        }
+        .grid-my-rabotodatel{
+            margin-top: 0;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 150px;  
+        }
+        
+    }
+    .EmployerProfile, .ExpertProfile{
+    .backArrow{
+        left: 80px !important;
+    }
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .myContainer{
+        max-width: 780px;
+    }
+    .navbar{
+        display: none !important;
+    }
+    .mobileNavbar{
+        display: block;
+        img{
+            width: 80px;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            &:active{
+                transform: scale(0.9);
+                transition: 0.1s;
+            }
+        }
+        .navbar_menu-mobile{
+            display: none;
+            font-size: 20px;
+            position: absolute;
+            top: 90px;
+            left: 20px;
+            background: white;
+            z-index: 100;
+            width: 280px;
+            height: max-content;
+            border: 1px solid rgb(254,128,21);
+            border-radius: 10px;
+            padding: 20px;
+            .navbar__element{
+                width: 240px;
+                padding-bottom: 15px;
+                a{
+                    text-decoration: none;
+                }
+                &:hover{
+                    transform: scale(0.9);
+                    transition: 0.2s;
+                }
+                &:active{
+                    transform: scale(0.9);
+                    transition: 0.2s;
+                }
+            }
+            .out{
+                padding-top: 15px;
+                padding-bottom: 0;
+                border-top: 1px solid rgb(254,128,21);
+            }
+        }
+    }
+    .sun-moon{
+        top: 0%;
+        left: 88% !important;
+    }
+    .Guest{
+        .header{
+            height: 358.45px;
+            .big_pepper{
+                width: 500px;
+                top: -30px;
+                left: -20px;
+            } 
+            .company_name{
+                top: 10px;
+                left: 220px;
+                font-size: 70px;
+            }
+            ul{
+                left: 59% !important;
+                font-size: 16px;
+                top: 120px;
+            } 
+        }
+        .guest_navbar .guest_navbar__items  .guest_navbar__item{
+            font-size: 40px;
+        }
+        .main{
+           .main__title{
+            width: 100%;
+            }
+            .avtomoika, .avtoservice{
+                padding-left: 10px;
+                .some_info{
+                   p{
+                    width: 360px;
+                    font-size: 25px;
+                    margin: 0 0 10px 0;
+                    text-align: center;
+                   }
+                   ul{
+                    margin-left: 10px;
+                    width: 400px;
+                   } 
+                }
+            }
+            .avtomoika{
+                padding-left: 30px;
+                .some_info{
+                    ul{
+                        padding-left: 20px;
+                    }
+                }
+            }
+            .mainImg{
+                display: block !important;
+                img{
+                    width: 30%;
+                    margin-bottom: 35px;
+                    margin: 0 0 35px 130px;
+                }
+                .img1{
+                    margin: 0 18px 35px 90px;
+                }
+            }
+        }
+        .phoneGrid{
+            display: block !important;
+            .float{
+                height: 1070px;
+                font-size: 20px;
+                .text{
+                    img{
+                     width: 120px;
+                    }
+                }
+            }
+          .marTopFloat{
+            .text{
+              padding-top: 170px;
+            }
+          }
+          .float1{
+            height: 460px !important;
+          }
+          .float2{
+            height: 350px !important;
+          }
+
+        }
+        .footer{
+            .footbar{
+                display: none;
+            }
+            .footbarMobile{
+                display: block !important;
+                p{
+                    font-size: 40px;
+                    margin-top: 25px;
+                    text-align: center;
+                    color: rgb(254,23,32);
+                    font-weight: 600;
+                }
+                ul{
+                    padding-left: 0 !important;
+                    margin-top: 30px;
+                    columns: 3;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+    .Entrance{
+        height: 1000px;
+        .upArrowSity, .upArrowSity_rab, .upArrow{
+            left: 75% !important;
+        }
+        .dropdown_sity__spec, .dropdown_sity{
+            left: 41% !important;
+        }
+        .dropdown_specialnost{
+            columns: 2 !important;
+            top: 100px !important;
+            left: 4% !important;
+        }
+    }
+    .EmpProfile, .ExpProfile{
+        .sun-moon{
+            top: 5px;
+            left: 89%;
+        }
+        .button{
+            width: auto;
+            padding: 5px 10px;
+            font-size: 20px;
+            top: 200px;
+            left: 61%;
+        }
+        .profile_h1{
+            margin-top: 100px !important;
+        }
+        .img{
+            img{
+              height: 230px;  
+            }
+        }
+        .main-info{
+            .name{
+                display: none;
+            }
+        }
+        .nameMobile{
+            display: flex !important;
+        }
+        .item-border{
+            .transform-button{
+                font-size: 20px;
+            }
+            .transform-button_height{
+                height: 44.5px;
+                margin-top: 35px;
+            }
+        }
+        .upArrow, .upArrowSity{
+            left: 86% !important;
+            top: 660px;
+        }
+        .upArrow{
+            top: 1005px;
+        }
+        .dropdown_specialnost{
+            columns: 2;
+            left: 40px;
+            top: 350px;
+        }
+        .dropdown_sity__spec{
+            left: 480px;
+            top: 540px;
+            columns: 1;
+            width: 230px;
+            .item-country{
+                width: 200px;
+                vertical-align: middle;
+                height: 70px;
+                .oneString{
+                    padding-top: 0 !important;
+                }
+            }
+        }
+        .save{
+            left: 77%;
+        }
+    }
+    .Experts{
+        .sun-moon{
+            left: 80%;
+        }
+        .body{
+            .button{
+                margin-right: 20px;
+                .link .dropdown-menu{
+                    width: 800px;
+                    top: 190px;
+                    left: 15px;
+                    .item{
+                        width: 350px !important;
+                        .link__todo{
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+            .buttonGeo img{
+                left: -27px !important;
+            }
+            .search input{
+                padding-left: 8px !important;
+                font-size: 17px !important;
+            }
+            .buttonGeo{
+                .dropdown-menu-country{
+                    left: -290px !important;
+                }
+            }
+        } 
+        .rabotniki{
+            margin: 0;
+            .grid{
+                padding: 0;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 97px;
+                .rabotnik{
+                    .men_img{
+                        width: 302px;
+                    }
+                    .rabotnik__info{
+                        padding: 30px 0 0 15px; 
+                    }
+                }
+            }
+        }
+        .searchButton{
+            margin-right: 0px !important;
+        }
+        .buttonGeo{
+            margin-left: 30px !important;
+            margin-right: 30px;
+        }
+        .my-advertisement{
+            margin-left: 0px !important;
+        }
+        .button{
+            margin-left: 0 !important;
+            margin-right: 0px !important;
+        }
+    }
+    .Ads_rab, .Ads_exp{
+        .mobileNavbar{
+            img{
+                width: 70px;
+            }
+        }
+        .row{
+            margin-top: 10px;
+            .buttonFilters{
+                margin-left: 53px;
+                margin-right: 54px;
+                .link .dropdown-menu{
+                    width: 805px;
+                    left: -415px !important;
+                }
+                .filters{
+                    display: none;
+                }
+                .link{
+                    padding-left: 0;
+                }
+            } 
+            .buttonGeo{
+                margin-right: 0px;
+                .sity img{
+                    left: -29px;
+                }
+                .dropdown-menu-country{
+                    left: -290px;
+                }
+            }
+            .button{
+                margin-left: 40px;   
+            }
+            .buttonMy{
+                margin-top: 30px;
+            }
+        }
+        .rabotniki{
+            margin: 0;
+           .grid{
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 60px;
+            grid-auto-rows: max-content !important;
+            margin-left: 20px;
+            padding-right: 30px;
+            .rabotnik__info{
+                grid-auto-rows: max-content !important;
+            }
+           } 
+        }
+        .grid-my-rabotodatel{
+            margin-top: 0;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 60px;  
+            margin-left: 20px;
+            padding-right: 30px;
+            .rabotnik__info-my{
+                padding-bottom: 100px !important;
+            }
+        }
+        .buttonAddAds{
+            margin-left: 40px;
+        }
+        .NonInMobile{
+            display: none;
+        }
+        .adsForm{
+            left: 8%;
+        }
+    }
+    .FastAds_rab, .FastAds_exp{
+        .mobileNavbar{
+            img{
+                width: 70px;
+            }
+        }
+        .row{
+            margin-top: 10px;
+            .buttonFilters{
+                margin-left: 53px;
+                margin-right: 54px;
+                .link{
+                    padding-left: 0 !important;
+                    .dropdown-menu{
+                        width: 805px;
+                        left: -388px !important;
+                    }
+                    .filters{
+                        display: none;
+                    }
+                }
+            } 
+            .buttonGeo{
+                margin-right: 0px;
+                .sity img{
+                    left: -30px;
+                }
+                .dropdown-menu-country{
+                    left: -290px;
+                }
+            }
+            .button{
+                margin-left: 40px;   
+            }
+            .buttonMy{
+                margin-top: 30px;
+            }
+        }
+        .rabotniki{
+            margin: 0;
+           .grid{
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 60px;
+            grid-auto-rows: max-content !important;
+            margin-left: 20px;
+            padding-right: 30px;
+            .rabotnik{
+                padding-bottom: 40px;
+            }
+            .rabotnik__info{
+                grid-auto-rows: max-content !important;
+            }
+           } 
+        }
+        .grid-my-rabotodatel{
+            margin-top: 0;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 60px;  
+            grid-auto-rows: max-content !important;
+            margin-left: 20px;
+            padding-right: 30px;
+        }
+        .buttonAddAds{
+            margin-left: 40px;
+        }
+        .NonInMobile{
+            display: none;
+        }
+        .adsForm{
+            left: 8%;
+        }
+    }
+    .EmployerProfile, .ExpertProfile{
+        .ExpertProfileWeb{
+            display: none;
+        }
+        .ExpertProfileTablet{
+            display: block !important;
+            .profile_h1{
+                text-align: center;
+                font-size: 45px;
+                margin: 120px auto 70px auto !important;
+            }
+            img{
+                width: 100%;
+                border-radius: 10px;
+            }
+            .item{
+                margin-left: 25px;
+                font-size: 25px;
+            }
+            .input_back{
+                font-size: 40px !important;
+            }
+            .borderName{
+                margin: 0;
+                padding: 0;
+                margin-top: 155px;
+                padding-left: 0px;
+            }
+            .firstLine{
+                margin-bottom: 35px;
+            }
+            .margLeftNAme{
+                margin-left: 33px !important;
+            }
+            .input-phone{
+                font-size: 40px !important;
+                text-align: start !important;
+                vertical-align: middle;
+                line-height: 110px;
+            }
+            .bookmarks{
+                img{
+                    margin-left: 5px !important;
+                    padding-left: 0 !important;
+                    width: 120px;
+                }
+                span{
+                    padding-left: 5px;
+                    font-size: 35px;
+                    transition: none !important;
+                }
+                .spanActive{
+                    line-height: 40px;
+                    padding-left: 20px;
+                    padding-top: 15px;
+                    text-align: center;
+                    transition: none !important;
+                }
+            }
+            button{
+                margin-top: 10px;
+                font-size: 32px !important;
+            }
+            .ignor{
+                margin-top: 20px;
+                img{
+                    margin-left: 30px !important;
+                    padding-left: 0 !important;
+                    width: 75px;
+                }
+                span{
+                    font-size: 30px;
+                    padding-left: 25px;
+                    text-align: center;
+                    padding-top: 5px;
+                    transition: none !important;
+                }
+                .spanActive1{
+                    line-height: 40px;
+                    padding-top: 25px;
+                    transition: none !important;
+                }
+            }
+            .textarea_class{
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+
+            }
+            .orangeBack{
+                background: rgb(254,128,21);
+                width: 836px;
+                height: 861px;
+                margin-left: -69px !important;
+                padding-left: 60px;
+                padding-top: 20px;
+            }
+        }
+        .backArrow{
+            display: none;
+        }
+        .backArrowOrange{
+            display: block !important;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            width: 70px;
+        }
+    }
+    .Forum{
+    .posts{
+        margin-top: 100px;
+        .post{
+            .postName{
+                width: 400px;
+            }
+            margin: 50px 0 20px 0px;
+            .comments{
+                .addComment{
+                    .commentText{
+                        width: 87%;
+                    }
+                    img{
+                        left: 15px;
+                    }
+                }
+            }
+        }
+     }
+    }
+
+}
+
+@media screen and (max-width: 428px) {
+    .myContainer{
+        max-width: 390px;
+    }
+    .mobileNavbar{
+        img{
+            width: 50px;
+            left: 10px;
+            top: 20px;
+        }
+        .navbar_menu-mobile{
+            font-size: 18px;
+            top: 70px;
+            left: 10px;
+            width: 250px;
+            border: 1px solid rgb(254,128,21);
+            border-radius: 10px;
+            padding: 20px;
+            .navbar__element{
+                width: 205px;
+            }
+        }
+    }
+    .Guest{
+        .header{
+            display: none;
+        }
+        .headerMini{
+            height: 510px;
+            display: block !important;
+            background: url(../img/white-back.jpeg);
+            background-size: cover;
+            .big_pepper{
+                width: 400px;
+                position: relative;
+                left: 10px;
+                top: 10px;
+            }
+            .company_name{
+                position: absolute;
+                top: 40px;
+                left: 52%;
+                color: rgb(254,23,32);
+                font-family: 'Segoe UI', sans-serif !important;
+                font-size: 65px;
+                font-weight: 700;
+            }
+            ul{
+                width: 100%;
+                padding-left: 45px;
+                margin-top: 0px;
+                color: rgb(254,23,32);
+                font-size: 20px;
+                font-weight: 500;
+                li{
+                    list-style: inside;
+                    span{
+                        color:rgb(254,128,21);
+                    }
+                }
+                
+            }
+        }
+        .guest_navbar {
+            padding-top: 40px;
+            line-height: 30px;
+            .guest_navbar__items {
+                display: block;
+                width: 100% !important;
+                .guest_navbar__item{
+                    display: inline-block;
+                    width: 155px;
+                    font-size: 22px !important;
+                    text-align: center;
+                    border-bottom: none;
+                    height: 58px;
+                    margin-left: 36px;
+                    border-top: 1px solid rgb(254,23,32);
+                }
+                .palka{
+                    width: auto;
+                    vertical-align: 30px;
+                }
+                .entrance{
+                    margin-left: 25px;
+                }
+                .rightPalka{
+                    margin-left: 37px;
+                }
+
+            }
+        }
+        .main{
+            max-width: 360px;
+            height: 700px;
+            .main__title{
+                font-size: 24px !important;
+                width: 360px !important;
+                margin: 0px auto 30px auto !important;
+                padding-top: 20px;
+            }
+            .avtomoika, .avtoservice{
+                height: 360px;
+                padding-left: 0;
+                .some_info{
+                    width: 100%;
+                    padding: 0;
+                   p{
+                    font-size: 20px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                   }
+
+                   ul{
+                    margin-left: 10px;
+                    width: 100%;
+                    font-size: 15px;
+                    padding-left: 0 !important;
+                    .paddingTop1{
+                        padding-top: 0;
+                    }
+                    .paddingTop2{
+                        padding-top: 0px;
+                    }
+
+                   } 
+                }
+            }
+            .avtomoika{
+                width: 360px !important;
+                padding-top: 60px !important;
+                height: 250px;
+                .avtomoika_info{
+                    ul{
+                        padding-top: 10px !important;
+                        padding-left: 50px;
+                    }
+                }
+            }
+            .avtoservice{
+                width: 360px !important;
+            }
+            .mainImg{
+                img{
+                    width: 41% !important;
+                    margin-bottom: 35px;
+                    margin: 0 0 35px 60px !important;
+                }
+                .img1{
+                    margin: 0 0 35px 0px !important;
+                }
+            }
+        }
+        .phoneGrid{
+            display: block !important;
+            .float{
+                height: 1080px;
+                font-size: 18px;
+                .text{
+                    img{
+                     width: 90px;
+                    }
+                }
+            }
+          .marTopFloat{
+            .text{
+              padding-top: 90px;
+            }
+          }
+          .float1{
+            height: 650px !important;
+          }
+          .float2{
+            height: 450px !important;
+          }
+
+        }
+        .footer{
+            .footbar{
+                display: none;
+            }
+            .footbarMobile{
+                display: block !important;
+                p{
+                    font-size: 30px;
+                    margin-top: 20px;
+                    text-align: center;
+                    color: rgb(254,23,32);
+                    font-weight: 600;
+                }
+                ul{
+                    padding-left: 0 !important;
+                    margin-top: 50px;
+                    columns: 3;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .Entrance{
+        width: auto;
+        .register-blank, .entrance-blank{
+            width: 97%;
+        }
+        .Who{
+            width: 40% !important;
+            margin: 20px 5% !important;
+        }
+        .left-arrow-1{
+           position: relative;
+           top: -50px;
+           left: 20px;
+           width: 50px !important;
+        }
+        .left-arrow-2{
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            width: 50px !important;
+        }
+        .registration, .to-entrance-button{
+            width: 46% !important;
+            margin: 10px 2% !important;
+        }
+        .registration{
+            margin-top: 35px !important;
+        }
+        .to-entrance-button{
+            font-size: 18px !important;
+        }
+        span{
+            width: 205px !important;
+        }
+        .upArrowSity, .upArrowSity_rab, .upArrow{
+            left: 89% !important;
+            top: 460px !important;
+        }
+        .upArrow{
+            top: 638px !important;
+        }
+        .dropdown_sity__spec, .dropdown_sity{
+            left: 36% !important;
+        }
+        .dropdown_specialnost{
+            columns: 1 !important;
+            left: 11px !important;
+            top: 350px !important;
+            width: 410px;
+        }
+        .entrance-button{
+            width: 96% !important;
+            margin: 0 2%;
+        }
+
+    }
+    .EmpProfile, .ExpProfile{
+        .sun-moon{
+            left: 75px !important;
+            top: 15px !important;
+            width: 60px;
+        }
+        .button{
+            width: 260px;
+            top: 25px;
+            left: 37%;
+            font-size: 18px;
+        }
+        .profile_h1{
+            margin: 130px auto 0 auto !important;
+        }
+        .img{
+            margin-top: 40px;
+            img{
+              height: auto; 
+            }
+        }
+        .main-info{
+            padding-top: 10px;
+        }
+        .item{
+            font-size: 20px;
+        }
+        .item-border{
+            textarea{
+                font-size: 18px;
+            }
+            .transform-password{
+                width: 101.5px;
+            }
+            .transform-button_height{
+                height: auto;
+                margin-top: 0;
+        
+            }
+        
+        } 
+        .upArrow, .upArrowSity{
+            left: 86% !important;
+            top: 975px;
+        }
+        .upArrow{
+            z-index: 20;
+            top: 1397px;
+        }
+        .dropdown_specialnost{
+            columns: 1;
+            left: 10px;
+            top: 350px;
+            width: 410px;
+        }
+        .dropdown_sity__spec{
+            left: 135px;
+            top: 825px;
+        }
+        .save{
+            left: 36%;
+        }
+        
+    }
+    .Experts{
+        .body{
+            .button {
+                margin-right: 30px;
+                
+                .link{
+                    .filtersSpan{
+                        display: none;
+                    }
+                    .dropdown-menu{
+                        columns: 1 !important;
+                        width: 390px;
+                        top: 260px;
+                        left: 12px;
+                        .item{
+                            width: 380px !important;   
+                        }
+                        .filtersButtonNone{
+                            display: none;
+                        }
+                        .filtersButtonMobile{
+                            display: block !important;
+                        }
+                    }
+                    img{
+                        height: 35px;
+                        width: 35px;
+                        margin-left: 10px;
+                    }
+                } 
+            }
+            .buttonGeo {
+                img{
+                    left: -22px !important;
+                }
+                .dropdown-menu-country{
+                    top: 12px !important;
+                    left: -160px !important;
+                }
+            } 
+            .my-advertisement{
+                margin-left: 36px;
+            }
+            .search {
+                margin-bottom: 20px;
+            }
+        } 
+        .rabotniki{
+            .grid{
+                grid-template-columns: 1fr;
+                .rabotnik{
+                    margin: 0 30px;
+                    .men_img{
+                        width: 347px;
+                    }
+                    .rabotnik__info{
+                        padding: 30px 0 0 15px; 
+                    }
+                }
+            }
+        }
+    }
+    .Ads_rab, .Ads_exp{
+        .row{
+            margin-top: 40px;
+        }
+        .mobileNavbar{
+            img{
+                width: 70px;
+            }
+            .navbar_menu-mobile{
+                top: 90px;
+            }
+        }
+        .buttonNuN{
+            display: none;
+        }
+        .mobileLitleMenu{
+            margin-top: 25px;
+            display: block !important;
+            .buttonFilters{
+                margin: 10px 5px 0 12px !important;
+                .link {
+                    .dropdown-menu{
+                        columns: 1 !important;
+                        width: 390px;
+                        top: 20px;
+                        left: -5px !important;
+                        .item{
+                            width: 380px !important;   
+                        }
+                        .filtersButtonNone{
+                            display: none;
+                        }
+                        .filtersButtonMobile{
+                            display: block !important;
+                        }
+                    }
+                    .filters{
+                        top: 17px;
+                        width: 55px;
+                        height: 50px;
+                        left: 0px;
+                        display: inline-block;
+                    }
+                } 
+            }
+            .buttonGeo{
+                margin: 10px 5px 0 10px !important;
+                .sity img{
+                    left: -15px;
+                    top: 6px;
+                    width: 45px;
+                    height: 45px;
+                    
+                }
+                .dropdown-menu-country{
+                    left: -172px;
+                }
+            }
+            .button{
+                margin: 15px 0 !important;
+            }
+            .filtersSpan{
+                display: none;
+            }
+
+        }
+        .buttonAddAds{
+            margin: -40px 5px 0 12px !important;
+            span{
+                padding: 3px;
+            }
+            &:hover{
+                transform: scale(1.1);
+                transition: 0.2s;
+            }
+        }
+        .buttonBookmarks{
+            margin: -40px 5px 0 12px !important;
+            span{
+                padding-top: 20px;
+            }
+            &:hover{
+                transform: scale(1.1);
+                transition: 0.2s;
+            }
+        }
+        .rabotniki{
+            .grid{
+                grid-template-columns: 1fr;
+                .rabotnik{
+                    margin: 0 20px 0 0px;
+                    .rabotnik__info{
+                        padding: 55px 10px 0 15px; 
+                    }
+                }
+            }
+            .grid-my-rabotodatel{
+                grid-template-columns: 1fr;
+                .rabotnik-my{
+                    margin: 0 20px 0 0px;
+                    .rabotnik__info-my{
+                        padding: 45px 10px 80px 15px; 
+                    }
+                    .timer{
+                        font-size: 21px;
+                        margin-left: -10px;
+                    }
+                }
+            }
+        }
+        .adsForm{
+            width: 400px;
+            left: 20px;
+            height: 800px;
+            top: 30px;
+            button{
+                float: none;
+                margin-top: 30px;
+                width: 350px;
+                margin-left: 10px;
+            }
+            textarea{
+                width: 100%;
+                height: 400px;
+            }
+        }
+    } 
+    .FastAds_rab, .FastAds_exp{
+        .sun-moon{
+            width: 90px;
+            left: 89% !important;
+        }
+        .mobileNavbar{
+            img{
+                width: 70px;
+            }
+        }
+        .row{
+            .buttonFilters{
+                margin-left: 53px;
+                margin-right: 54px;
+                .link{
+                    padding-left: 0 !important;
+                    .dropdown-menu{
+                        columns: 1 !important;
+                        width: 390px;
+                        top: -10px;
+                        left: -10px !important;
+                        .item{
+                            width: 380px !important;   
+                        }
+                        .filtersButtonNone{
+                            display: none;
+                        }
+                        .filtersButtonMobile{
+                            display: block !important;
+                        }
+                    }
+                    .filters{
+                        display: block;
+                        position: relative;
+                        top: 25px;
+                        left: 30%;
+                    }
+                }
+            } 
+            .buttonGeo{
+                margin-right: 0px;
+                .sity img{
+                    left: -13px;
+                    top: 6px;
+                    width: 45px;
+                    height: 45px;
+
+                }
+                .dropdown-menu-country{
+                    left: -170px;
+                    top: 15px;
+                }
+            }
+        }
+        .rabotniki{
+            margin: 0;
+           .grid{
+            grid-template-columns: 1fr;
+            grid-column-gap: 60px;
+            grid-auto-rows: max-content !important;
+            margin-left: 8px;
+            padding-right: 30px;
+            .rabotnik{
+                padding-bottom: 40px;
+            }
+            .rabotnik__info{
+                grid-auto-rows: max-content !important;
+            }
+           } 
+        }
+        .grid-my-rabotodatel{
+            margin-top: 0;
+            grid-template-columns: 1fr;
+            grid-column-gap: 60px;  
+            grid-auto-rows: max-content !important;
+            margin-left: 20px;
+            padding-right: 30px;
+        }
+        .buttonAddAds{
+            margin: 10px 5px 0 12px !important;
+            span{
+                padding: 3px;
+            }
+            &:hover{
+                transform: scale(1.1);
+                transition: 0.2s;
+            }
+        }
+        .buttonBookmarks{
+            margin: 10px 5px 0 12px !important;
+            span{
+                padding-top: 20px;
+            }
+            &:hover{
+                transform: scale(1.1);
+                transition: 0.2s;
+            }
+        }
+        .NonInMobile{
+            display: none;
+        }
+        .adsForm{
+            width: 400px;
+            left: 20px;
+            height: 800px;
+            top: 30px;
+            button{
+                float: none;
+                margin-top: 30px;
+                width: 350px;
+                margin-left: 10px;
+            }
+            textarea{
+                width: 100%;
+                height: 400px;
+            }
+        }
+        .mobileLitleMenu{
+            margin-top: 25px;
+            display: block !important;
+            .buttonFilters{
+                margin: 10px 5px 0 12px !important;
+                .link
+                {
+                    .dropdown-menu{
+                        columns: 1 !important;
+                        width: 390px;
+                        top: -10px;
+                        left: -5px !important;
+                        .item{
+                            width: 380px !important;   
+                        }
+                        .filtersButtonNone{
+                            display: none;
+                        }
+                        .filtersButtonMobile{
+                            display: block !important;
+                        }
+                    }
+                    .filters{
+                        top: 25px;
+                        width: 55px;
+                        height: 50px;
+                    }
+                } 
+            }
+            .buttonGeo{
+                margin: 10px 5px 0 10px !important;
+                .sity img{
+                    left: -15px;
+                }
+                .dropdown-menu-country{
+                    left: -172px;
+                }
+            }
+            .button{
+                margin: 15px 0 !important;
+            }
+            .filtersSpan{
+                display: none;
+            }
+
+        }
+        .buttonNuN{
+            display: none;
+        }
+
+    }
+    .EmployerProfile, .ExpertProfile{
+        .ExpertProfileTablet{
+            display: none !important;
+        }
+        .ExpertProfileMobile{
+            display: block !important;
+            .profile_h1{
+                text-align: center;
+                margin: 100px auto 30px auto !important;
+            }
+            .orangeBack{
+                background: rgb(254,128,21);
+                width: 431px;
+                margin-left: -13px;
+                padding-top: 20px;
+                padding-bottom: 5px;
+            }
+            img{
+                width: 93%;
+                margin: 0 15px;
+                border-radius: 10px;
+            }
+            .input-phone{
+                font-size: 40px;
+            }
+            button{
+                width: 92%;
+                font-size: 33px;
+            }
+            .bookmarks{
+                img{
+                    width: 120px;
+                    margin-left: 0px;
+                }
+                .spanActive{
+                    line-height: 40px;
+                    padding-left: 0px;
+                    padding-top: 0px;
+                    font-size: 28px;
+                }
+                span{
+                    padding-left: 10px; 
+                    font-size: 28px;
+                }
+            }
+            .ignor{
+                img{
+                    width: 80px;
+                    margin-right: 7px;
+                    margin-left: 25px;
+                }
+            }
+        }
+        .backArrowOrange{
+            top: 10px;
+            left: 10px;
+            width: 50px;
+        }
+    }
+    .Forum{
+        font-family: 'Manrope', sans-serif;
+        .posts{
+          .post{
+            margin: 50px 0 20px -20px;
+            padding: 25px 20px 0 25px;
+            width: 95%;
+            height: max-content;
+            border-radius: 10px;
+            .postAvatar{
+              width: 130px;
+              height: 120px;
+              border-radius: 10px;
+              margin-left: 20px;
+              border: 1px solid rgb(254,128,21);
+            }
+            .name{
+              position: relative;
+              font-size: 32px;
+              top: -50px;
+              left: 180px;
+              color: rgb(254,23,32);
+              
+            }
+            .postName{
+              position: static;
+              margin-top: -20px;
+              margin-left: 20px;
+              font-size: 22px;
+            }
+            .postText{
+              position: static;
+              margin-top: 20px;
+              margin-left: 20px;
+              font-size: 19px;
+            }
+            .openComments{
+              position: static;
+              font-size: 22px;
+              margin-left: 20px;
+              margin-top: 20px;
+            }
+            .comments{
+              border: 1px solid rgba(254,23,32,);
+              border-radius: 10px;
+              margin: 15px 0 30px 25px;
+              width: 100%;
+              .comment{
+                padding: 40px 20px 10px 20px;
+              }
+              .addComment{
+                padding: 20px 5px 0px 15px;
+                .commentText{
+                  padding: 5px;
+                  width: 84%;
+                  height: 100%;
+                  line-height: 25px;
+                  font-size: 16px;
+                }
+                img{
+                  width: 40px;
+                  top: -25px;
+                  left: 8px;
+                }
+              }
+            }
+          }
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .Guest{
+        .headerMini{
+            height: 540px;
+            ul{
+                padding-left: 40px;
+            }
+            .big_pepper{
+                width: 400px;
+                position: relative;
+                left: -5px;
+                top: 10px;
+            }
+            .company_name{
+                left: 50%;
+            }
+        }
+        .guest_navbar {
+            .guest_navbar__items{
+                .guest_navbar__item{
+                    font-size: 20px !important;
+                }
+                .entrance{
+                    margin-left: 12px;
+                }
+            }  
+        }
+        .phoneGrid{
+          .marTopFloat{
+            .text{
+              padding-top: 90px;
+            }
+          }
+          .float1{
+            height: 640px !important;
+          }
+
+        }
+    }
+    .sun-moon{
+        width:80px;
+        left: 1% !important;
+        top: 5px;
+    }
+    .Entrance{
+        .registration, .to-entrance-button{
+            width: 96% !important;
+            margin: 10px 2% !important;
+        }
+        .registration{
+            margin-top: 15px !important;
+        }
+        .to-entrance-button{
+            font-size: 20px !important;
+        }
+        .upArrowSity, .upArrowSity_rab, .upArrow{
+            left: 89% !important;
+            top: 457px !important;
+        }
+        .upArrow{
+            top: 633px !important;
+        }
+        .dropdown_sity__spec, .dropdown_sity{
+            left: 85px !important;
+            width: 300px;
+            .item-country{
+                width: 100%;
+            }
+        }
+        .dropdown_specialnost{
+            left: 5px !important;
+            width: 380px;
+            .link__todo{
+                font-size: 15px !important;
+            }
+        }
+    }
+    .EmpProfile, .ExpProfile{
+        .sun-moon{
+            left: 60px !important;
+        }
+        .button{
+            left: 31%;
+        }
+        .item{
+            font-size: 19px;
+        }
+        .item-border{
+            textarea{
+                font-size: 18px;
+            }
+            .transform-button{
+                font-size: 18px;
+            }
+            .transform-password{
+                width: 94.63px;
+            }
+
+        } 
+        .upArrow, .upArrowSity{
+            left: 85% !important;
+            top: 935px;
+        }
+        .upArrow{
+            z-index: 20;
+            top: 1350px;
+        }
+        .dropdown_specialnost{
+            left: 5px;
+            top: 350px;
+            width: 380px;
+            .link__todo{
+                font-size: 15px !important;
+            }
+        }
+        .dropdown_sity__spec{
+            left: 100px;
+            top: 785px;
+        }
+        .save{
+            left: 30%;
+        }
+        
+    }
+    .Experts{
+        h1{
+            margin-top: 110px;
+        }
+        .body{
+            margin-top: 30px;
+            .button {
+                margin-right: 15px;
+                .link{
+                    .dropdown-menu{
+                        width: 373px;
+                        left: 8px;
+                    }
+                } 
+                .advertisement__span{
+                    font-size: 21px
+                }
+            }
+            .buttonGeo {
+                img{
+                    left: -25px !important;
+                }
+            } 
+        } 
+        .rabotniki{
+            .grid{
+                grid-template-columns: 1fr;
+                .rabotnik{
+                    margin: 0 10px;
+                }
+            }
+        }
+        .link{
+            margin-left: 0 !important;
+        }
+    }
+    .Ads_rab, .Ads_exp{
+        .sun-moon{
+            left: 77% !important;
+        }
+        .mobileLitleMenu{
+            .buttonFilters{
+                margin: 10px 5px 0 12px !important;
+                .link
+                {
+                    .dropdown-menu{
+                        width: 370px;
+                        left: -15px !important;
+                    }
+                } 
+                .link__todo{
+                    font-size: 16px !important;
+                }
+            }
+            .buttonGeo{
+                margin: 10px 5px 0 10px !important;
+                .sity img{
+                    left: -15px;
+                }
+                .dropdown-menu-country{
+                    left: -190px;
+                }
+            }
+
+        }
+        .buttonAddAds{
+            margin: -20px 3px 0 12px !important;
+            span{
+                padding: 1px;
+                font-size: 24px;
+            }
+        }
+        .buttonBookmarks{
+            margin: -20px 5px 0 7px !important;
+            span{
+                padding-top: 15px;
+            }
+        }
+        .adsForm{
+            width: 370px;
+            left: 10px;
+            height: 800px;
+            top: 30px;
+            button{
+                float: none;
+                margin-top: 30px;
+                width: 320px;
+                margin-left: 10px;
+            }
+            textarea{
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+    .FastAds_exp, .FastAds_rab{
+        .buttonAddAds{
+            margin: 0px 3px 0 12px !important;
+            span{
+                padding: 1px;
+                font-size: 24px;
+            }
+        }
+        .buttonBookmarks{
+            margin: 0px 5px 0 7px !important;
+            span{
+                padding-top: 15px;
+            }
+        }
+        .adsForm{
+            width: 370px;
+            left: 10px;
+            height: 800px;
+            top: 30px;
+            button{
+                float: none;
+                margin-top: 30px;
+                width: 320px;
+                margin-left: 10px;
+            }
+            textarea{
+                width: 100%;
+                height: 400px;
+            }
+        }
+        .dropdown-menu{
+            width: 355px !important;
+        }
+        .buttonGeo{
+            .dropdown-menu-country{
+                left: -190px !important;
+            }
+        }
+        .rabotniki .grid{
+            margin-left: 8px !important;
+        }
+        .grid-my-rabotodatel{
+            margin-left: 25px;
+        }
+    }
+    .EmployerProfile, .ExpertProfile{
+        .ExpertProfileMobile{
+            .orangeBack{
+                background: rgb(254,128,21);
+                width: 393px;
+                margin-left: -13px;
+                padding-top: 20px;
+                padding-bottom: 5px;
+            }
+            .bookmarks{
+                img{
+                    width: 110px;
+                }
+                .spanActive{
+                    margin-left: -5px;
+                }
+                span{
+                    padding-left: 0px; 
+                    font-size: 26px ;
+                }
+            }
+            .ignor{
+                img{
+                    width: 70px;
+                    margin-right: 7px;
+                    margin-left: 25px;
+                }
+                .spanActive1{
+                    padding-left: 20px;
+                }
+                span{
+                    padding-left: 25px;
+                    font-size: 26px;
+                }
+            }
+        }
+
+    }
+    .Forum{
+        font-family: 'Manrope', sans-serif;
+        .posts{
+          .post{
+            margin: 50px 0 20px -30px;
+            .comments{
+              margin: 15px 0 30px 35px;
+              width: 100%;
+              .addComment{
+                img{
+                  left: 6px;
+                }
+              }
+            }
+          }
+        }
+    }
+}
+
+
+

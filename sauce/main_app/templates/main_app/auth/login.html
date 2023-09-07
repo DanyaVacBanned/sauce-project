@@ -1,0 +1,27 @@
+{% extends 'main_app/layout/base.html' %}
+
+{% block title %} Авторизация {% endblock title %}
+
+{% block content %}
+
+<div class="login-form-block">
+    <button id="change-method">Авторизоваться по номеру телефона</button>
+    <form method="post">
+        {% csrf_token %}
+        <fieldset>
+            {{form.as_div}}
+        </fieldset>
+        <button>
+            Вход
+        </button>
+    </form>
+</div>
+
+
+<div class="error-message">
+    <p>
+        {{error}}
+    </p>
+</div>
+
+{% endblock content %}

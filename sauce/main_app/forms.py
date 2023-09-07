@@ -1,7 +1,23 @@
+from collections.abc import Mapping
 from typing import Any
 from django.contrib.auth.forms import UserCreationForm
 
+from django import forms
+from django.forms.utils import ErrorList
+
 from .models import SauceUser, Employer
+
+
+
+class SauceLoginForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(SauceLoginForm, self).__init__(*args, **kwargs)
+    password = forms.CharField(help_text=False, required=True, widget=forms.PasswordInput)
+    email = forms.EmailField(help_text=False, required=False)
+    class Meta:
+        model = SauceUser
+        fields = ['email', 'phone_number', 'password']
 
 
 
@@ -25,5 +41,12 @@ class CreateEmployerAccountForm(UserCreationForm):
     class Meta:
         model = Employer
         fields = ['email', "username", 'city', 'address']
+
+class ProfileUpdateForm(forms.ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = SauceUser
+        fields = ['username', 'email', 'city', 'address', 'profile_image']
         
-    
+

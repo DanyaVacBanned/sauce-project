@@ -1,0 +1,37 @@
+{% extends 'main_app/layout/base.html' %}
+
+
+{% block title %} {user_info.username}} {% endblock title %}
+
+
+{% block content %} 
+
+<div class="user-info-block">
+    <div class="profile-image">
+        <img src="{{ user_info.profile_image.url }}" alt="">
+    </div>
+    
+    {% if user_info.role == "EMPLOYER" %}
+    
+    <div class="user-info-description">
+        <div class="user-info-name">
+            <span>Имя: {{user_info.username}}</span>
+            <span>Фамилия: {{user_info.second_name}}</span>
+        </div>
+
+    </div>    
+    
+    {% else %}
+    
+    {% endif %}
+    
+</div>
+<form action="{% url 'logout' %}" method="get">
+
+    
+    <button>
+        Выйти
+    </button>
+</form>
+
+{% endblock content %}

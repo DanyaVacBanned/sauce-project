@@ -12,7 +12,7 @@ else:
     from .config import ProductionConfig
     config_settings = ProductionConfig()
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['194.58.100.194', '127.0.0.1', 'localhost']
 
 SECRET_KEY = config_settings.SECRET_KEY
 

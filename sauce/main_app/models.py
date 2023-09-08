@@ -44,7 +44,8 @@ class SauceUser(AbstractUser):
         verbose_name="Номер телефона",
         null=True,
         blank=True,
-        unique=True
+        unique=True,
+        default="Номер телефона не указан"
         )
     email = models.EmailField(
         verbose_name="email",
@@ -66,23 +67,7 @@ class SauceUser(AbstractUser):
         blank=True,
         default="Фамилия не указана"
         ) 
-    address = models.CharField(
-        verbose_name="Адресс основного объекта",
-        max_length=300,
-        blank=True,
-        null=True
-        )  
-    other_objects = models.TextField(
-        verbose_name="Прочие объекты компании",
-        blank=True,
-        null=True
-        ) 
-    specialization = models.CharField(
-        verbose_name="Специальность",
-        blank=True,
-        null=True,
-        max_length=150
-        )
+    
     city = models.CharField(
         verbose_name="Город",
         blank=True,
@@ -97,12 +82,7 @@ class SauceUser(AbstractUser):
         null = True,
         blank=True 
         )
-    experience = models.IntegerField(
-        verbose_name="Стаж работы",
-        null=True,
-        blank = True,
-        default="Опыт не указан"
-        )
+    
     profile_description = models.TextField(
         verbose_name="Описание профиля",
         null=True,
@@ -156,5 +136,32 @@ class Employer(SauceUser):
 
     base_role = SauceUser.Role.EMPLOYER
 
+    address = models.CharField(
+        verbose_name="Адресс основного объекта",
+        max_length=300,
+        blank=True,
+        null=True
+        )  
+    other_objects = models.TextField(
+        verbose_name="Прочие объекты компании",
+        blank=True,
+        null=True,
+        default="Прочие объекты не указаны"
+        ) 
 
 
+class Candidate(SauceUser):
+    experience = models.IntegerField(
+        verbose_name="Стаж работы",
+        null=True,
+        blank = True,
+        default="Опыт не указан"
+        )
+    
+    specialization = models.CharField(
+        verbose_name="Специальность",
+        blank=True,
+        null=True,
+        max_length=150,
+        default="Специальность не указана"
+        )

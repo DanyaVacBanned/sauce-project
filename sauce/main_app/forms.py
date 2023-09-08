@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.forms.utils import ErrorList
 
-from .models import SauceUser, Employer
+from .models import SauceUser, Employer, Candidate
 
 
 
@@ -13,8 +13,8 @@ class SauceLoginForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.request = kwargs.pop('request', None)
         super(SauceLoginForm, self).__init__(*args, **kwargs)
-    password = forms.CharField(help_text=False, required=True, widget=forms.PasswordInput)
     email = forms.EmailField(help_text=False, required=False)
+    password = forms.CharField(help_text=False, required=True, widget=forms.PasswordInput)
     class Meta:
         model = SauceUser
         fields = ['email', 'phone_number', 'password']
@@ -28,7 +28,7 @@ class CreateCandidateAccountForm(UserCreationForm):
             self.fields[fieldname].help_text = None
 
     class Meta:
-        model = SauceUser
+        model = Candidate
         fields = ['email', 'username']
 
 class CreateEmployerAccountForm(UserCreationForm):
@@ -47,6 +47,6 @@ class ProfileUpdateForm(forms.ModelForm):
 
     class Meta:
         model = SauceUser
-        fields = ['username', 'email', 'city', 'address', 'profile_image']
+        fields = ['username', 'email', 'city', 'profile_image']
         
 

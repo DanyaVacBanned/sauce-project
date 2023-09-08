@@ -25,7 +25,7 @@ from .forms import (
     SauceLoginForm,
 
     )
-from .models import SauceUser
+from .models import SauceUser, Employer, Candidate
 
 
 
@@ -54,10 +54,22 @@ def register_page(request):
 @login_required
 def profile_page(request, *args, **kwargs):
     template_name = 'main_app/profile/profile.html'
+    employer = None
+    candidate = None
     if request.method == "GET":
         user = SauceUser.objects.get(id=request.user.id)
+        
+        if user.role == "EMPLOYER":
+            
+            employer = Employer.objects.get(id=request.user.id)
+            
+        elif user.role == "CANDIDATE":
+            candidate = Candidate.objects.get(id=request.user.id)
+        role = employer if employer is not None else candidate
+       
         context = {
-            "user_info": user
+            "user_info": user,
+            "role": role
             }
         return render(request, template_name, context)
     

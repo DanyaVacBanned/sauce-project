@@ -19,6 +19,7 @@ SECRET_KEY = config_settings.SECRET_KEY
 
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -26,7 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_app.apps.MainAppConfig',
+    'chat.apps.ChatConfig',
     'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
@@ -58,8 +61,8 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'sauce.asgi.application'
 WSGI_APPLICATION = 'sauce.wsgi.application'
-
 
 
 DATABASES = {

@@ -1,0 +1,20 @@
+{% extends 'chat/index.html' %}
+{% load static %}
+{% block title %} Диалог {% endblock title %}
+
+{% block content %}
+
+<div class="chat-log-block">
+    <textarea id="chat-log" cols="100" rows="20" readonly></textarea>
+</div>
+<div class="chat-message-input-block">
+    <input type="text" id="chat-message-input" size="100">
+</div>
+<div class="chat-message-send-block">
+    <input type="button" id="chat-message-send" value="Отправить">
+    {{ room_name|json_script:"room_name" }}
+</div>
+
+
+<script src="{% static 'chat/js/roomPage.js' %}"></script>
+{% endblock content %}

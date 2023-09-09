@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'chat/css/chatPage.css' %}">
+    <title>{% block title %}Список диалогов{% endblock title %}</title>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        <p>Диалоги</p>
+        <div class="room-name-block">
+            <input type="text" id="room-name-input" size="100">
+        </div>
+        <div class="room-name-submit-block">
+            <input type="button" value="Enter" id="room-name-submit">
+        </div>
+        <script src="{% static 'chat/js/chatRooms.js' %}"></script>
+        {% endblock content %}
+    </div>
+</body>
+</html>

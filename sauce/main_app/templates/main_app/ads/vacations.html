@@ -1,0 +1,51 @@
+{% extends 'main_app/layout/base.html' %}
+
+{% block title %}
+Вакансии
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="vacations-list-block">
+    {% for vacation in vacations %}
+    <div class="vacation-card">
+        
+        <div class="vacation-created-date">
+            <span>
+                Дата создания: {{vacation.created}}
+            </span>
+        </div>
+        <div class="vacation-title">
+            <span>
+                Название вакансии: {{vacation.title}}
+            </span>
+        </div>
+        <div class="vacation-description">
+            <span>
+                Описание: {{vacation.description}}
+            </span>
+        </div>
+        <div class="vacation-award">
+            <span>
+                Оплата: {{vacation.award}} руб.
+            </span>
+        </div>
+        <div class="vacation-deadlines">
+            <span>
+                Сроки: выполнить до {{vacation.deadlines}}
+            </span>
+        </div>
+        <div class="vacation-views-count">
+            <span>
+                Просмотры: {{vacation.views_count}}
+            </span>
+        </div>
+        <a href="{% url 'vacation-card' vacation.id %}" class="vacation-link">
+            Посмотреть
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

@@ -3,36 +3,50 @@
 {% block title %} Авторизация {% endblock title %}
 
 {% block content %}
-<div class="login-form-wrapper">
-    <div class="login-form-block">
-        <button id="change-button" class="btn btn-primary" onclick="change_auth_method()">Авторизоваться по номеру телефона</button>
-        <form method="post">
-            {% csrf_token %}
-            <fieldset>
-                <label id="email_field_label" for="email_field">Email</label>  
-                <input id="email_field" name="email" type="email" required />
 
-                <label for="password_field">Пароль</label>
-                <input id="password_field" type="password" name="password" required />
-            </fieldset>
-            <button>
-                Вход
-            </button>
-        </form>
-    </div>
-
-
-
-    <div class="no-accont-yet">
-        <p>
-            Еще нет аккаунта?
-        </p>
-        <a href="{% url 'registration' %}" class="no-account-yet-link link-underline-info">
-            Зарегистрируйтесь
-        </a>
-    </div>
-
+<div class="dark-theme-icon-block">
+    <img class="dark-theme-icon" src="{% static 'main_app/src/img/moon.png' %}" alt="Темная тема" onclick="">
 </div>
-<script src="{% static 'main_app/js/loginPage.js' %}">
-</script>
+<div class="login-container">
+    <div class="login-form-wrapper">
+        <div class="go-back-arrow">
+            <a href="{% url 'main_page' %}">
+                <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
+            </a>
+        </div>
+        <div class="page-title">
+            <span>
+                Вход
+            </span>
+        </div>
+        <div class="login-with-email-form-block" id="login-with-email" style="display: flex">
+            <form method="post">
+                {% csrf_token %}
+                <fieldset>
+                    <div class="form-field-block">
+                        <input id="email_field" name="email" type="email" placeholder="Почта" required />
+                    </div>
+                    <div class="form-field-block">
+                        <input id="password_field" type="password" name="password" placeholder="Пароль" required />
+                    </div>
+                </fieldset>
+                <div class="login-form-buttons">
+                    <button class="enter-btn">
+                        Войти
+                    </button>
+                    
+                    
+                        <a href="{% url 'registration' %}" class="enter-btn long-btn">
+                            Зарегестрироваться
+                        </a>
+                    
+                </div>
+            </form>
+        </div>
+
+
+        
+
+    </div>
+</div>
 {% endblock content %}

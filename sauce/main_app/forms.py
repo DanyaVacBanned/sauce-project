@@ -3,9 +3,39 @@ from typing import Any
 from django.contrib.auth.forms import UserCreationForm
 
 from django import forms
-from django.forms.utils import ErrorList
 
-from .models import SauceUser, Employer, Candidate
+
+from .models import (
+    SauceUser, Employer, Candidate,
+    Vacation
+    )
+
+
+class CreateVacationForm(forms.ModelForm):
+    title = forms.CharField(
+        max_length=150,
+        required=True,
+        help_text=False
+        )
+    description = forms.CharField(
+        required=True,
+        help_text=False
+        )
+    award = forms.IntegerField(required=True, help_text=False)
+    deadlines = forms.DateField(
+        required=True,
+        help_text=False,
+        widget=forms.DateInput()
+        )
+    class Meta:
+        model = Vacation
+        fields = [
+            "title",
+            "description",
+            "award",
+            "deadlines"
+            ]
+
 
 
 
@@ -14,6 +44,7 @@ class SauceLoginForm(forms.Form):
         self.request = kwargs.pop('request', None)
         super(SauceLoginForm, self).__init__(*args, **kwargs)
     email = forms.EmailField(help_text=False, required=False)
+    phone_number = forms.CharField(help_text=False, required=False)
     password = forms.CharField(help_text=False, required=True, widget=forms.PasswordInput)
     class Meta:
         model = SauceUser
@@ -29,7 +60,7 @@ class CreateCandidateAccountForm(UserCreationForm):
 
     class Meta:
         model = Candidate
-        fields = ['email', 'username']
+        fields = ['phone_number', 'email', 'username']
 
 class CreateEmployerAccountForm(UserCreationForm):
     
@@ -40,7 +71,7 @@ class CreateEmployerAccountForm(UserCreationForm):
 
     class Meta:
         model = Employer
-        fields = ['email', "username", 'city', 'address']
+        fields = ['phone_number', 'email', "username", 'city', 'address']
 
 class ProfileUpdateForm(forms.ModelForm):
     email = forms.EmailField()

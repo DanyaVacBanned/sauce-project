@@ -5,7 +5,11 @@
 {% block content %}
 
 <div class="chat-log-block">
-    <textarea id="chat-log" cols="100" rows="20" readonly></textarea>
+    <div id="chat-log">
+        {% for message in chat_messages %}
+        <div>{{message}}</div>
+        {% endfor %}
+    </div>
 </div>
 <div class="chat-message-input-block">
     <input type="text" id="chat-message-input" size="100">
@@ -13,6 +17,8 @@
 <div class="chat-message-send-block">
     <input type="button" id="chat-message-send" value="Отправить">
     {{ room_name|json_script:"room_name" }}
+    {{ username|json_script:"username" }}
+
 </div>
 
 

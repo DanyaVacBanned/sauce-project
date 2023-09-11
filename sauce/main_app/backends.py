@@ -7,8 +7,15 @@ class SauceAuthenticationBackend(object):
 
     def authenticate(self, request, email = None, phone_number = None, password = None):
         sauce_user = get_user_model()
-        print(email)
+        if email == "":
+            email = None
+        if phone_number == "":
+            phone_number = None
+
         
+        
+        print(email, "mail")
+        print(phone_number, "phone", type(phone_number))
         try:
             if phone_number is None:
                 user = sauce_user.objects.get(email=email)

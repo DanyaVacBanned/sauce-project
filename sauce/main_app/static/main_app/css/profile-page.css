@@ -1,0 +1,50 @@
+
+.user-info-block {
+
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;   
+}
+
+
+.user-info-block-wrapper {
+    display: flex;
+    flex-direction: row;
+    color: #A90000;
+    font-size: 24px;
+    flex-wrap: wrap;
+}
+
+.user-info {
+    width: 30em;
+    height: 2.5em;
+    border-bottom: 1px solid #947E0E;
+}
+
+.user-info-title h2 {
+
+    margin-bottom: 2em;
+    font-size: 64px;
+    font-weight: 700;
+    color: #A90000;
+
+}
+
+
+.profile-image img {
+
+    width: 170px;
+    height: 170px;
+
+}
+
+.profile-image {
+
+    display: block;
+    width: 7em;
+    height: 7em;
+    margin-right: 2em;
+
+}

@@ -7,40 +7,50 @@
 {% block content %} 
 
 <div class="user-info-block">
-    <div class="profile-image">
-        <img src="{{ user_info.profile_image.url }}" alt="">
+
+    <div class="user-info-title">
+        <h2>
+            Личный кабинет
+        </h2>
     </div>
-    
-    {% if user_info.role == "EMPLOYER" %}
-    
-    <div class="user-info-description">
-        <div class="user-info-name">
-            <span>Имя: {{user_info.username}}</span>
-            <span>Фамилия: {{user_info.second_name}}</span>
+    <div class="user-info-block-wrapper">
+        <div class="profile-image">
+            <img src="{{ user_info.profile_image.url }}" alt="">
         </div>
-        <div class="user-info-city">
-            <span>Город: {{user_info.city}}</span>
-        </div>
-        <div class="user-info-address">
-            <span>Адрес основного объекта: {{role.address}}</span>
-        </div>
-        <div class="user-info-other-objects">
-            <span>
-                Другие объекты
-            </span>
-            <div class="other-objects-area">
-                {{role.other_objects}}
+        
+        {% if user_info.role == "EMPLOYER" %}
+        
+        <div class="user-info">
+            <div class="user-info">
+                <span>Имя: {{user_info.username}}</span>
+                <span>Фамилия: {{user_info.second_name}}</span>
             </div>
-        </div>
-        <div class="user-info-phone">
-            <span>
-                Номер телефона: <a href="tel:{{user_info.phone_number}}">{{user_info.phone_number}}</a>
-            </span>
-        </div>
-        <div class="user-info-profile-description">
-            <span>Описание: </span>
-            <div class="profile-description-area">
-                {{user_info.profile_description}}
+            <div class="user-info">
+                <span>Город: {{user_info.city}}</span>
+            </div>
+            <div class="user-info">
+                <span>Адрес основного объекта: {{role.address}}</span>
+            </div>
+            <div class="user-info">
+                <span>
+                    Другие объекты: {{role.other_objects}}
+                </span>
+                
+            </div>
+            <div class="user-info">
+                <span>
+                    {% if user_info.phone_number == 0 %}
+                    Номер телефона не указан
+                    {% else %}
+                    Номер телефона: <a href="tel:{{user_info.phone_number}}">{{user_info.phone_number}}</a>
+                    {% endif %}
+                </span>
+            </div>
+            <div class="user-info">
+                <span>О компании: </span>
+                <div class="profile-description-area">
+                    {{user_info.profile_description}}
+                </div>
             </div>
         </div>
     </div>    
@@ -76,12 +86,12 @@
     {% endif %}
     
 </div>
-<form action="{% url 'logout' %}" method="get">
+<!-- <form action="{% url 'logout' %}" method="get">
 
     
     <button class="btn btn-danger">
         Выйти
     </button>
-</form>
+</form> -->
 
 {% endblock content %}

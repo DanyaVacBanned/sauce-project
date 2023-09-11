@@ -13,7 +13,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, CreateView
+from django.views.generic.detail import DetailView
 
 
 
@@ -23,9 +24,13 @@ from .forms import (
     CreateCandidateAccountForm,
     ProfileUpdateForm,
     SauceLoginForm,
+    CreateVacationForm
 
     )
-from .models import SauceUser, Employer, Candidate
+from .models import (
+    SauceUser, Employer, Candidate,
+    Vacation
+                     )
 
 
 
@@ -102,7 +107,62 @@ def update_profile(request, *args, **kwargs):
                       template_name=template_name,
                       context=context
                       )
+
+
+class CreateVacationView(CreateView, LoginRequiredMixin):
+    form_class = CreateVacationForm
+    template_name = "main_app/ads/create-vacation.html"
+    model = Vacation
+    
+    def __init__(self, **kwargs: Any) -> None:
+        super(CreateVacationView, self).__init__()
+
+    def get_success_url(self) -> str:
         
+        url = reverse_lazy('profile-page', args=[self.request.user.id])
+        print(url)
+        return url
+
+    def form_valid(self, form: Any) -> HttpResponse:
+        vacation = form.save(commit=False)
+        vacation.employer = SauceUser.objects.get(id=self.request.user.id)
+        vacation.save()
+        if vacation is not None:
+            return super(CreateVacationView, self).form_valid(form)
+
+    def get(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        if SauceUser.objects.get(id=request.user.id).role == "EMPLOYER":
+            return super(CreateVacationView, self).get(request)
+        else:
+            return redirect('profile-page', request.user.id)
+
+
+class CandidatesListView(DetailView, LoginRequiredMixin):
+    def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        
+        if SauceUser.objects.get(id=request.user.id).role == "EMPLOYER":
+            candidates = Candidate.objects.all()
+            return render(
+                request=request,    
+                template_name="main_app/ads/candidates.html",
+                context={"candidates":candidates}
+                )
+        else:
+            return redirect('vacations')
+        
+class AdsListView(DetailView, LoginRequiredMixin):
+    def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        if SauceUser.objects.get(id=request.user.id).role == "CANDIDATE":
+            vacations = Vacation.objects.all()
+            return render(
+                request=request,
+                template_name="main_app/ads/vacations.html",
+                context={'vacations':vacations}
+                )
+        else:
+            return redirect('employers')
+        
+
 
 class LoginPage(LoginView):
     template_name = "main_app/auth/login.html"
@@ -114,6 +174,7 @@ class LoginPage(LoginView):
         return reverse_lazy('profile-page', self.request.user.id)
 
     def form_valid(self, form: Any) -> HttpResponse:
+        print(form)
         try:
             email = form.cleaned_data['email']
         except KeyError:
@@ -127,7 +188,8 @@ class LoginPage(LoginView):
         user = authenticate(self.request, 
                             email=email, 
                             password=password, 
-                            phone_number=phone_number)
+                            phone_number=phone_number
+                            )
 
         if user is not None:
             login(self.request, user)
@@ -137,14 +199,11 @@ class LoginPage(LoginView):
         
     def form_invalid(self, form: AuthenticationForm) -> HttpResponse:
         return super().form_invalid(form)
-            
-      
-    
-        
-
+                
+ 
 class RegisterCandidate(FormView):
     form_class = CreateCandidateAccountForm
-    template_name = 'main_app/auth/register.html'
+    template_name = 'main_app/auth/register-candidate.html'
     
     redirect_authenticated_user = True
 
@@ -170,7 +229,7 @@ class RegisterCandidate(FormView):
 class RegisterEmployer(FormView):
     
     form_class = CreateEmployerAccountForm
-    template_name = 'main_app/auth/register.html'
+    template_name = 'main_app/auth/register-employer.html'
     
     redirect_authenticated_user = True
 

@@ -8,6 +8,13 @@ a {
     color: none;
 }
 
+.go-back-arrow img {
+    height:83px ;
+    width: 83px;
+}
+
+
+
 .hiden {
     
     display: None;

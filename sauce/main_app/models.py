@@ -45,7 +45,7 @@ class SauceUser(AbstractUser):
         null=True,
         blank=True,
         unique=True,
-        default="Номер телефона не указан"
+        default=0
         )
     email = models.EmailField(
         verbose_name="email",
@@ -155,7 +155,7 @@ class Candidate(SauceUser):
         verbose_name="Стаж работы",
         null=True,
         blank = True,
-        default="Опыт не указан"
+        default=0
         )
     
     specialization = models.CharField(
@@ -165,3 +165,14 @@ class Candidate(SauceUser):
         max_length=150,
         default="Специальность не указана"
         )
+    
+
+class Vacation(models.Model):
+
+    employer = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name='user_role')
+    description = models.TextField()
+    title = models.CharField(max_length=150)
+    award = models.IntegerField()
+    views_count = models.IntegerField(blank=True, null=True)
+    deadlines = models.DateField()
+    created = models.DateTimeField(auto_now_add=True)

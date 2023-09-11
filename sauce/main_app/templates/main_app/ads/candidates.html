@@ -1,0 +1,37 @@
+{% extends 'main_app/layout/base.html' %}
+
+{% block title %} 
+Список работодателей
+{% endblock title %}
+
+{% block content %}
+
+<div class="candidates-list-block">
+    {% for candidate in candidates %}
+    
+    <div class="candidate-card">
+        <a href="{% url 'profile-page' candidate.id %}">
+            <div class="candidate-photo">
+                <img src="{{candidate.profile_image.url}}" alt="Фото работодателя">
+            </div>
+            <div class="candidate-specialization">
+                <span>
+                    Специальноть: {{candidate.specialization}}
+                </span>
+            </div>
+            <div class="candidate-name">
+                <span>
+                Имя: {{candidate.username}}
+                </span>
+            </div>
+            <div class="candidate-citizenship">
+                <span>
+                Гражданство: {{candidate.citizenship}}
+                </span>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

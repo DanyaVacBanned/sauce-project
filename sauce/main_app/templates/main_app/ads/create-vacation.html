@@ -1,0 +1,24 @@
+{% extends 'main_app/layout/base.html' %}
+
+{% block title %} Новое объявление {% endblock title %}
+
+
+{% block content %} 
+<div class="create-vacation-block">
+    <form method="post">
+        {% csrf_token %}
+        <!-- <input type="text" id="id_title" name="title">
+        <textarea name="description" id="id_description" cols="30" rows="10"></textarea>
+        <input type="number" id="id_award" name="award">
+        <input type="text" id="id_deadlines" name="deadlines" required /> -->
+        {{form.title}}
+        {{form.description}}
+        {{form.award}}
+        {{form.deadlines}}
+        
+        <button class="create-vacation-btn">
+            Создать
+        </button>
+    </form>
+</div>
+{% endblock content %}

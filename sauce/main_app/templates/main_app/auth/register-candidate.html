@@ -1,0 +1,48 @@
+{% extends 'main_app/layout/base.html' %}
+{% load static %}
+{% block title %} Регистраиця {% endblock title %}
+
+
+{% block content %}
+<div class="dark-theme-icon-block">
+    <img class="dark-theme-icon" src="{% static 'main_app/src/img/moon.png' %}" alt="Темная тема" onclick="">
+</div>
+<div class="register-form-wrapper">
+    <div class="register-form">
+        <div class="go-back-arrow">
+            <a href="{% url 'registration' %}">
+                <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
+            </a>
+        </div>
+        <div class="register-form-title page-title">
+            <span>
+                Регистраиця
+            </span>
+        </div>
+        
+        <form method="POST" id="reg-form">
+            {% csrf_token %}
+            
+            <div class="form-field-block">
+                <input type="text" name="username" placeholder="Имя" required />
+            </div>
+            <div class="form-field-block">
+                <input type="text" name="city" placeholder="Город" />
+            </div>
+            <div class="form-field-block">
+                <input type="email" name="email" placeholder="Почта" required />
+            </div>
+            <div class="form-field-block">
+                <input type="password" autocomplete="new-password" name="password1" placeholder="Пароль" required />
+            </div>
+            <div class="form-field-block">
+                <input type="password" autocomplete="new-password" name="password2" placeholder="Подтверждение пароля" required />
+            </div>
+            <button type="submit" class="btn-register enter-btn">
+                Зарегистрироваться
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

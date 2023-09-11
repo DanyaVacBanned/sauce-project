@@ -1,13 +1,127 @@
 
+.login-container {
 
-.login-form-wrapper {
-    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
+    height: 50vw;
+    
+}
+
+.login-with-email-form-block {
+
     align-content: center;
-    flex-direction: column;
+    width: 30vw;
     
 
 }
 
+.go-back-arrow {
+
+    
+    align-self: flex-start;
+
+}
+
+.login-form-wrapper {
+    
+    display: flex;
+    width: 30vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    display: block;
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+
+.form-field-block {
+    width: 30vw;
+    margin-bottom: 40px;
+
+}
+
+.form-field-block input {
+    background-color: #FFF;
+    width: 30vw;
+    border-radius: 29px;
+    box-shadow: 0px 4px 0px 0px #930202;
+    text-indent: 1.2em;
+    
+}
+
+.login-form-buttons {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.enter-btn {
+
+    background: none;
+    font-size: 24px;
+    border-radius: 20px;
+    border: 2px solid #A00000;
+    width: 8em;
+    height: 2.5em;
+    margin-bottom: 1em;
+
+
+}
+
+.enter-btn.long-btn {
+    width: 14em;
+    text-align: center;
+    padding-top: 0.4em;
+    color:black;
+
+}
+
+.enter-btn::hover {
+
+    background: #272727;
+}
+
+.dark-theme-icon-block {
+    display: flex;
+    justify-content: flex-end;
+
+
+}
+
+.dark-theme-icon {
+    
+    cursor: pointer;
+
+}
+
+.register-form-wrapper {
+
+display: flex;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.register-form {
+
+
+    display: flex;
+    
+    flex-flow: column;
+
+}
+
+.btn-register {
+
+    width: 100%;
+
+}

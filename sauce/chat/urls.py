@@ -3,10 +3,10 @@ from django.urls import path
 
 from .views import (    
     
-    index, chat_room
+    rooms, ChatView
     )
 
 urlpatterns = [
-    path("", index, name='chat'),
-    path("<str:room_name>/", chat_room, name='room')
+    path("", rooms, name='chat'),
+    path("<str:room_name>/", ChatView.as_view(), name='room')
     ]

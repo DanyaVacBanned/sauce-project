@@ -1,5 +1,5 @@
 {% extends "main_app/layout/base.html" %}
-
+{% load static %}
 
 {% block title %}
 Редактирование - {{user.username}}
@@ -9,13 +9,47 @@
 {% block content %}
 
 <div class="profile-update-form-block">
+    
+    <div class="go-back-arrow">
+        <a href="{% url 'profile-page' request.user.id%}">
+            <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
+        </a>
+    </div>
     <form method="post">
+        <div class="user-info-title">
+            <h2>
+                Редактирование
+            </h2>
+        </div>
         {% csrf_token %}
-        <fieldset class="profile-update-form-group">
-            {{ update_form }}
-        </fieldset>
+
+        <div class="profile-update-form-group">
+            <div class="user-info">
+                Имя: {{update_form.username}}
+            </div>
+            <div class="user-info">
+                Фамилия: {{update_form.second_name}}
+            </div>
+            <div class="user-info">
+                Почта: {{update_form.email}}
+            </div>
+            <div class="user-info">
+                Телефон: {{update_form.phone_number}}
+            </div>
+            <div class="user-info">
+                Город: {{update_form.city}}
+            </div>
+            <div class="user-info">
+                Гражданство: {{update_form.citizenship}}
+            </div>
+            <div class="user-info last-child">
+                О компании: {{update_form.profile_description}}
+            </div>
+            
+        </div>
         <div class="profile-update-form-button">
-            <button class="btn btn-outline-info">
+            
+            <button class="submit-btn">
                 Обновить
             </button>
         </div>

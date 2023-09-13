@@ -74,10 +74,10 @@ class CreateEmployerAccountForm(UserCreationForm):
         fields = ['phone_number', 'email', "username", 'city', 'address']
 
 class ProfileUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
+    # email = forms.EmailField()    
 
     class Meta:
         model = SauceUser
-        fields = ['username', 'email', 'city', 'profile_image']
+        fields = ['username', 'second_name', 'email', 'phone_number','city', 'citizenship', 'profile_description','profile_image']
         
-
+    

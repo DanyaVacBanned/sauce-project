@@ -10,12 +10,65 @@
     <link rel="stylesheet" href="{% static 'main_app/css/registration-page.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/login-page.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/profile-page.css' %}">
+    <link rel="stylesheet" href="{% static 'chat/css/chatPage.css' %}">
 <title>{% block title %} {% endblock title %}</title>
 </head>
 <body>
 
     <div class="header-block">
+
+        {% block navbar %}
+        {% if request.user.is_authenticated %}
+        <div class="nav-bar">
+            <nav>
+                <ul>
+                    <li class="nav-bar-item">
+                        <a href="{% url 'profile-page' request.user.id %}">
+                            Личный кабинет
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="{% url 'chat' %}">
+                            Сообщения
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="{% url 'candidates' %}">
+                            Специалисты
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="{% url 'vacations' %}">
+                            Объявления
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="">
+                            Срочные заявки
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="">
+                            Форум
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="">
+                            Новости и информация
+                        </a>
+                    </li>
+                    <li class="nav-bar-item">
+                        <a href="{% url 'logout' %}">
+                            Выход
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {% endif %}
+        {% endblock navbar %}
         {% block header %}
+        
         {% endblock header %}
     </div>
     <div class="container">

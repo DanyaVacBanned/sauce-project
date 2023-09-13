@@ -14,19 +14,36 @@
         </h2>
     </div>
     <div class="user-info-block-wrapper">
+        <div class="user-info-edit-btn">
+            <!-- <a href="{% url 'update-profile-page' request.user.id %}">
+                Редактировать
+            </a> -->
+            <form action="{% url 'update-profile-page' request.user.id %}" method="get">
+                <button class="user-info-edit-btn">
+                    Редактировать
+                </button>
+            </form>
+        </div>
         <div class="profile-image">
             <img src="{{ user_info.profile_image.url }}" alt="">
         </div>
         
         {% if user_info.role == "EMPLOYER" %}
         
-        <div class="user-info">
+        <div class="user-info-fields">
             <div class="user-info">
                 <span>Имя: {{user_info.username}}</span>
-                <span>Фамилия: {{user_info.second_name}}</span>
+            </div>
+            <div class="user-info">
+            <span>Фамилия: {{user_info.second_name}}</span>
             </div>
             <div class="user-info">
                 <span>Город: {{user_info.city}}</span>
+            </div>
+            <div class="user-info">
+                <span>
+                    Гражданство: {{user.info.citizenship}}
+                </span>
             </div>
             <div class="user-info">
                 <span>Адрес основного объекта: {{role.address}}</span>
@@ -46,43 +63,53 @@
                     {% endif %}
                 </span>
             </div>
-            <div class="user-info">
+            <div class="user-info-description">
                 <span>О компании: </span>
-                <div class="profile-description-area">
-                    {{user_info.profile_description}}
-                </div>
+            </div>
+            <div class="profile-description-area">
+                {{user_info.profile_description}}
             </div>
         </div>
     </div>    
     
     {% else %}
-    <div class="user-info-description">
-        <div class="user-info-name">
+    <div class="user-info-fields">
+        <div class="user-info">
             <span>Имя: {{user_info.username}}</span>
             <span>Фамилия: {{user_info.second_name}}</span>
         </div>
-        <div class="user-info-city">
+        <div class="user-info">
             <span>Город: {{user_info.city}}</span>
         </div>
-        
-        <div class="user-info-experience">
+        <div class="user-info">
             <span>Опыт работы: {{role.experience}}</span>
         </div>
-        <div class="user-info-specialization">
-            <span>Специальность: {{role.specialization}}</span> 
-        </div>
-        <div class="user-info-phone">
+        <div class="user-info">
             <span>
+                Специальность: {{role.specialization}}
+            </span>
+            
+        </div>
+        <div class="user-info">
+            <span>
+                {% if user_info.phone_number == 0 %}
+                Номер телефона не указан
+                {% else %}
                 Номер телефона: <a href="tel:{{user_info.phone_number}}">{{user_info.phone_number}}</a>
+                {% endif %}
             </span>
         </div>
-        <div class="user-info-profile-description">
-            <span>Описание: </span>
-            <div class="profile-description-area">
-                {{user_info.profile_description}}
-            </div>
+        <div class="user-info-description">
+            <span>О себе: </span>
+        </div>
+        <div class="profile-description-area">
+            
+            {{user_info.profile_description}}
+            
         </div>
     </div>
+</div>    
+
     {% endif %}
     
 </div>

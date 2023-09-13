@@ -83,30 +83,31 @@ def profile_page(request, *args, **kwargs):
 @login_required
 def update_profile(request, *args, **kwargs):
     template_name = 'main_app/profile/profile-update.html'
+    
+    user_instance = SauceUser.objects.get(id=request.user.id)
+    
+    update_profile_form = ProfileUpdateForm(
+        request.POST or None,
+        request.FILES or None,
+        instance=user_instance
+        )
+    
     if request.method == "POST":
-       
-        update_profile_form = ProfileUpdateForm(
-            request.POST,
-            request.FILES,
-            instance=request.user
-            )
-        
         if update_profile_form.is_valid():
-            update_profile_form.save()
-            messages.success(request, "Ваш аккаунт успешно обновлен")
+            update_profile_form.save(commit=True)
             return redirect('profile-page', request.user.id)
+    return render(request, template_name, context={'user':request.user, 'update_form':update_profile_form})
+    # if request.method == "GET":
+    #     update_profile_form = ProfileUpdateForm(instance=SauceUser.objects.get(id=request.user.id))
+    #     context={
+    #         'user':request.user,
+    #         'update_form': update_profile_form,
+    #         }
         
-    if request.method == "GET":
-        update_profile_form = ProfileUpdateForm(instance=request.user)
-        context={
-            'user':request.user,
-            'update_form': update_profile_form,
-            }
-        
-        return render(request=request,
-                      template_name=template_name,
-                      context=context
-                      )
+    #     return render(request=request,
+    #                   template_name=template_name,
+    #                   context=context
+    #                   )
 
 
 class CreateVacationView(CreateView, LoginRequiredMixin):
@@ -160,7 +161,7 @@ class AdsListView(DetailView, LoginRequiredMixin):
                 context={'vacations':vacations}
                 )
         else:
-            return redirect('employers')
+            return redirect('candidates')
         
 
 

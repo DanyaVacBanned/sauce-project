@@ -86,7 +86,7 @@ DATABASES = {
     }
 }
 
-
+ALLOWED_HOSTS = ['194.58.100.194','194-58-100-194.cloudvps.regruhosting.ru']
 
 AUTH_PASSWORD_VALIDATORS = [
     {

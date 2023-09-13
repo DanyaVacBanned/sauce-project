@@ -1,0 +1,38 @@
+{% extends 'main_app/layout/base.html' %}
+{% load static %}
+{% block title %} Авторизация {% endblock title %}
+
+{% block content %}
+<div class="login-form-wrapper">
+    <div class="login-form-block">
+        <button id="change-button" class="btn btn-primary" onclick="change_auth_method()">Авторизоваться по номеру телефона</button>
+        <form method="post">
+            {% csrf_token %}
+            <fieldset>
+                <label id="email_field_label" for="email_field">Email</label>  
+                <input id="email_field" name="email" type="email" required />
+
+                <label for="password_field">Пароль</label>
+                <input id="password_field" type="password" name="password" required />
+            </fieldset>
+            <button>
+                Вход
+            </button>
+        </form>
+    </div>
+
+
+
+    <div class="no-accont-yet">
+        <p>
+            Еще нет аккаунта?
+        </p>
+        <a href="{% url 'registration' %}" class="no-account-yet-link link-underline-info">
+            Зарегистрируйтесь
+        </a>
+    </div>
+
+</div>
+<script src="{% static 'main_app/js/loginPage.js' %}">
+</script>
+{% endblock content %}

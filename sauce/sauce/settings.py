@@ -1,14 +1,8 @@
-
+import os
 from pathlib import Path
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 if DEBUG:
@@ -18,11 +12,11 @@ else:
     from .config import ProductionConfig
     config_settings = ProductionConfig()
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['194.58.100.194', '127.0.0.1', 'localhost']
 
 SECRET_KEY = config_settings.SECRET_KEY
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -67,8 +61,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sauce.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -81,9 +73,7 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['194.58.100.194', '127.0.0.1', 'localhost']
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+ALLOWED_HOSTS = ['194.58.100.194','194-58-100-194.cloudvps.regruhosting.ru']
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -101,8 +91,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
 
@@ -113,21 +101,19 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'main_app.SauceUser'
-# AUTHENTICATION_BACKENDS = (
-#     'main_app.auth.AuthManager', # our custom authentication backend
+AUTHENTICATION_BACKENDS = (
+    'main_app.backends.SauceAuthenticationBackend', 
     
-#     )
+    )
 #Logging
 
 # LOGGING = {

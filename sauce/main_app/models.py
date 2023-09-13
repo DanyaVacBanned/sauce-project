@@ -1,13 +1,15 @@
+from PIL import Image
+
 from typing import Any
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 
 
 def get_profile_image_filepath(self):
-    return f'profile_images/{self.pk}/{"profile_image.png"}'
+    return f'main_app/profile_image/{self.pk}/{"profile_image.png"}'
 
 def get_default_profile_image():
-    return "main_app/anonimus_user.png"
+    return "main_app/profile_image/anonimus.png"
 
 class SauceUserManager(BaseUserManager):
     def create_user(self, email, username, password=None):
@@ -33,7 +35,7 @@ class SauceUserManager(BaseUserManager):
         user.is_superuser = True
         user.save(using=self._db)
         return user
-
+   
 
 class SauceUser(AbstractUser):
 
@@ -41,7 +43,9 @@ class SauceUser(AbstractUser):
     phone_number = models.BigIntegerField(
         verbose_name="Номер телефона",
         null=True,
-        blank=True
+        blank=True,
+        unique=True,
+        default="Номер телефона не указан"
         )
     email = models.EmailField(
         verbose_name="email",
@@ -54,35 +58,22 @@ class SauceUser(AbstractUser):
         max_length=200,
         null=True,
         blank=True,
+        default="Имя не указано"
         )
     second_name = models.CharField(
         verbose_name="Фамилия",
         max_length=200,
         null=True,
-        blank=True
+        blank=True,
+        default="Фамилия не указана"
         ) 
-    address = models.CharField(
-        verbose_name="Адресс основного объекта",
-        max_length=300,
-        blank=True,
-        null=True
-        )  
-    other_objects = models.TextField(
-        verbose_name="Прочие объекты компании",
-        blank=True,
-        null=True
-        ) 
-    specialization = models.CharField(
-        verbose_name="Специальность",
-        blank=True,
-        null=True,
-        max_length=150
-        )
+    
     city = models.CharField(
         verbose_name="Город",
         blank=True,
         null=True,
-        max_length=200
+        max_length=200,
+        default="Город не указан"
         )
     profile_image = models.ImageField(
         verbose_name="Фото профиля",
@@ -91,15 +82,12 @@ class SauceUser(AbstractUser):
         null = True,
         blank=True 
         )
-    experience = models.IntegerField(
-        verbose_name="Стаж работы",
-        null=True,
-        blank = True
-        )
+    
     profile_description = models.TextField(
         verbose_name="Описание профиля",
         null=True,
-        blank=True
+        blank=True,
+        default="..."
         )
     citizenship = models.CharField(
         verbose_name="Гражданство",
@@ -121,6 +109,13 @@ class SauceUser(AbstractUser):
     is_superuser = models.BooleanField(default=False)
     
     def save(self, *args, **kwargs):
+        img = Image.open(self.profile_image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.profile_image.path)
+
         if not self.pk:
             self.role = self.base_role
             return super().save(*args, **kwargs)
@@ -141,5 +136,32 @@ class Employer(SauceUser):
 
     base_role = SauceUser.Role.EMPLOYER
 
+    address = models.CharField(
+        verbose_name="Адресс основного объекта",
+        max_length=300,
+        blank=True,
+        null=True
+        )  
+    other_objects = models.TextField(
+        verbose_name="Прочие объекты компании",
+        blank=True,
+        null=True,
+        default="Прочие объекты не указаны"
+        ) 
 
 
+class Candidate(SauceUser):
+    experience = models.IntegerField(
+        verbose_name="Стаж работы",
+        null=True,
+        blank = True,
+        default="Опыт не указан"
+        )
+    
+    specialization = models.CharField(
+        verbose_name="Специальность",
+        blank=True,
+        null=True,
+        max_length=150,
+        default="Специальность не указана"
+        )

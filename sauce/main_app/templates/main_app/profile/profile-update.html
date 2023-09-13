@@ -1,0 +1,25 @@
+{% extends "main_app/layout/base.html" %}
+
+
+{% block title %}
+Редактирование - {{user.username}}
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="profile-update-form-block">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="profile-update-form-group">
+            {{ update_form }}
+        </fieldset>
+        <div class="profile-update-form-button">
+            <button class="btn btn-outline-info">
+                Обновить
+            </button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

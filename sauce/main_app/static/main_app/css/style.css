@@ -324,7 +324,10 @@ margin: 0;
 
 
 .contacts-block-icons {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     margin-bottom: 15px;
 }
 
@@ -335,7 +338,8 @@ margin: 0;
 
 
 .contacts-block-icon-item {
-    width: 6vh;
+    width: 100%;
+    height: 100%;
     display: inline-flex;
     justify-content: center;
 

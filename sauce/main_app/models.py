@@ -12,23 +12,23 @@ def get_default_profile_image():
     return "main_app/profile_image/anonimus.png"
 
 class SauceUserManager(BaseUserManager):
-    def create_user(self, email, username, password=None):
+    def create_user(self, email, password=None):
         if email is None:
             raise ValueError("Email не введен")
-        
+
         user = self.model(
             email = self.normalize_email(email),
-            username = username
+            # username = username
             )
         user.set_password(password)
         user.save(using=self._db)
         return user
-    
-    def create_superuser(self, email, username, password):
+
+    def create_superuser(self, email, password):
         user = self.create_user(
             email=self.normalize_email(email),
-            username=username,
-            password=password
+            # username=username,
+            password=password,
             )
         user.is_admin = True
         user.is_staff = True
@@ -44,7 +44,7 @@ class SauceUser(AbstractUser):
         verbose_name="Номер телефона",
         null=True,
         blank=True,
-        unique=True,
+        # unique=True,
         default=0
         )
     email = models.EmailField(

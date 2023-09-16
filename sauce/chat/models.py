@@ -5,14 +5,14 @@ from django.contrib.auth import get_user_model
 SauceUser = get_user_model()
 
 class ChatRoom(models.Model):
-    room_id = models.CharField(unique=True)
+    room_id = models.CharField(unique=True, max_length=250)
 
 
 class ChatMessage(models.Model):
     user = models.ForeignKey(
         SauceUser, related_name="messages", on_delete=models.CASCADE
         )
-    chat_room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE, related_name='chat_room')
+    chat_room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE, related_name='chat_room', max_length=250)
     message = models.TextField(max_length=3000)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now = True)

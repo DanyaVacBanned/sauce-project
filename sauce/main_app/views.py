@@ -56,7 +56,7 @@ def register_page(request):
     template_name = 'main_app//auth/main_register.html'
     return render(request=request, template_name=template_name)
 
-@login_required
+# @login_required
 def profile_page(request, *args, **kwargs):
     template_name = 'main_app/profile/profile.html'
     employer = None

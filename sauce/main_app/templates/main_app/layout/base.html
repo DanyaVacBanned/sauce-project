@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{% static 'main_app/css/registration-page.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/login-page.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/profile-page.css' %}">
+    <link rel="stylesheet" href="{% static 'main_app/css/candidate.css' %}">
+    <link rel="stylesheet" href="{% static 'main_app/css/vacation.css' %}">
+    <link rel="stylesheet" href="{% static 'main_app/css/urgent-applications.css' %}">
     <link rel="stylesheet" href="{% static 'chat/css/chatPage.css' %}">
 <title>{% block title %} {% endblock title %}</title>
 </head>
@@ -21,7 +24,7 @@
         {% if request.user.is_authenticated %}
         <div class="nav-bar">
             <nav>
-                <ul>
+                <ul class="nav-bar-list">
                     <li class="nav-bar-item">
                         <a href="{% url 'profile-page' request.user.id %}">
                             Личный кабинет

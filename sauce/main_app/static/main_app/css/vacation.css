@@ -1,0 +1,18 @@
+.vacations-list-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.vacations-card {
+    border-radius: 25px;
+    padding: 25px;
+    border: 2px currentColor solid;
+}
+
+.vacations-card:hover {
+    background-color: rgb(240, 240, 240);
+}

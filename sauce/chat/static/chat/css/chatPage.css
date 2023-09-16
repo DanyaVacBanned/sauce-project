@@ -1,7 +1,13 @@
 
 .room-names-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
+.chat-log-block {
+    border: 20px;
+    padding: 20px;
+    min-height: 500px;
+    width: 100%;
 }

@@ -10,13 +10,14 @@
 
 <div class="profile-update-form-block">
     
-    <div class="go-back-arrow">
-        <a href="{% url 'profile-page' request.user.id%}">
-            <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
-        </a>
-    </div>
+
     <form method="post">
         <div class="user-info-title">
+            <div class="go-back-arrow">
+              <a href="{% url 'profile-page' request.user.id%}">
+                <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
+              </a>
+            </div>
             <h2>
                 Редактирование
             </h2>

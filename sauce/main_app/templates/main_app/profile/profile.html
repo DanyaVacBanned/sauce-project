@@ -14,6 +14,9 @@
         </h2>
     </div>
     <div class="user-info-block-wrapper">
+        <div class="profile-image">
+            <img src="{{ user_info.profile_image.url }}" alt="">
+        </div>
         <div class="user-info-edit-btn">
             <!-- <a href="{% url 'update-profile-page' request.user.id %}">
                 Редактировать
@@ -24,13 +27,10 @@
                 </button>
             </form>
         </div>
-        <div class="profile-image">
-            <img src="{{ user_info.profile_image.url }}" alt="">
-        </div>
-        
+
         {% if user_info.role == "EMPLOYER" %}
         
-        <div class="user-info-fields">
+{#        <div class="user-info-fields">#}
             <div class="user-info">
                 <span>Имя: {{user_info.username}}</span>
             </div>

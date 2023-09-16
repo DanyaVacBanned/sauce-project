@@ -1,25 +1,26 @@
 
 
 .account-type-container {
-
-
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    
+    height: 600px;
+    width: 100%;
 }
 
+.account-type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
 
 .account-type-btn{
-
-    height: 3em;
-    width: 10em;
-    font-size: 1.5vw;
-    padding: 1vw;
-    margin: 1vw;
-    border: 0.3vw solid;
-    border-radius: 1vw;
+    width: 250px;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 20px;
     background-color: #FE7B29;
     color: white;
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{% static 'main_app/src/bootstrap/css/bootstrap.min.css' %}">
+{#    <link rel="stylesheet" href="{% static 'main_app/src/bootstrap/css/bootstrap.min.css' %}">#}
     <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/registration-page.css' %}">
     <link rel="stylesheet" href="{% static 'main_app/css/login-page.css' %}">
@@ -75,7 +75,57 @@
         {% block content %}
         {% endblock content %}
     </div>
-    
+
+    {% block footer %}
+    <footer>
+        <div class="contacts-block-container">
+            <div class="contacts-block">
+
+                <div class="contacts-block-title">
+                    <h5>
+                        Контакты
+                    </h5>
+                </div>
+
+                <div class="contacts-block-icons">
+                    <div class="contacts-block-icon-item phone">
+                        <a href="tel:+79995202008">
+                            <img src="{% static 'main_app/src/img/phone.png' %}" alt="Телефон">
+                        </a>
+
+                    </div>
+
+                    <div class="contacts-block-icon-item telegram">
+                        <a href="https://t.me/operses">
+                            <img src="{% static 'main_app/src/img/telegram.png' %}" alt="Телеграмм">
+                        </a>
+                    </div>
+
+                    <div class="contacts-block-icon-item whats-app">
+                        <a href="https://wa.me/79995202008">
+                            <img src="{% static 'main_app/src/img/whatsapp.png' %}" alt="Whats App">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contacts-block-info">
+                    <div class="contacts-block-info-phone">
+                        <span>
+                            +7 (999) 520-20-08
+                        </span>
+                    </div>
+                    <div class="contacts-block-info-telegram">
+                        <span>
+                            @operses
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    {% endblock footer %}
     <script src="{% static 'main_app/js/script.js' %}"></script>
 </body>
 </html>

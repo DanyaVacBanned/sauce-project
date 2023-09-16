@@ -60,7 +60,7 @@ class CreateCandidateAccountForm(UserCreationForm):
 
     class Meta:
         model = Candidate
-        fields = ['phone_number', 'email', 'username']
+        fields = ['email', 'username']
 
 class CreateEmployerAccountForm(UserCreationForm):
     
@@ -71,7 +71,10 @@ class CreateEmployerAccountForm(UserCreationForm):
 
     class Meta:
         model = Employer
-        fields = ['phone_number', 'email', "username", 'city', 'address']
+        fields = ['email', "username", 'city', 'address']
+
+
+
 
 class ProfileUpdateForm(forms.ModelForm):
     # email = forms.EmailField()    

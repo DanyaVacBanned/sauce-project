@@ -12,7 +12,7 @@ def get_default_profile_image():
     return "main_app/profile_image/anonimus.png"
 
 class SauceUserManager(BaseUserManager):
-    def create_user(self, email, username, password=None):
+    def create_user(self, email, username=None, password=None):
         if email is None:
             raise ValueError("Email не введен")
         
@@ -24,11 +24,14 @@ class SauceUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
     
-    def create_superuser(self, email, username, password):
+    def create_superuser(self, email, username=None, password=None):
         user = self.create_user(
             email=self.normalize_email(email),
             username=username,
-            password=password
+            password=password,
+            is_admin = True,
+            is_staff = True,
+            is_superuser = True
             )
         user.is_admin = True
         user.is_staff = True
@@ -39,12 +42,15 @@ class SauceUserManager(BaseUserManager):
 
 class SauceUser(AbstractUser):
 
+    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
     
+
     phone_number = models.BigIntegerField(
         verbose_name="Номер телефона",
         null=True,
         blank=True,
-        unique=True,
         default=0
         )
     email = models.EmailField(
@@ -174,5 +180,14 @@ class Vacation(models.Model):
     title = models.CharField(max_length=150)
     award = models.IntegerField()
     views_count = models.IntegerField(blank=True, null=True)
+    deadlines = models.DateField()
+    created = models.DateTimeField(auto_now_add=True)
+
+
+class UrgentApplications(models.Model):
+    
+    user = models.ForeignKey(SauceUser, on_delete=models.CASCADE)
+    title = models.CharField(max_length=150)
+    description = models.TextField()
     deadlines = models.DateField()
     created = models.DateTimeField(auto_now_add=True)

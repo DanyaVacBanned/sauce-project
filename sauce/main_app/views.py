@@ -29,9 +29,8 @@ from .forms import (
     )
 from .models import (
     SauceUser, Employer, Candidate,
-    Vacation
+    Vacation, UrgentApplications
                      )
-
 
 
 
@@ -53,7 +52,7 @@ def main_page(request):
 
 
 def register_page(request):
-    template_name = 'main_app//auth/main_register.html'
+    template_name = 'main_app/auth/main_register.html'
     return render(request=request, template_name=template_name)
 
 @login_required
@@ -108,6 +107,34 @@ def update_profile(request, *args, **kwargs):
     #                   template_name=template_name,
     #                   context=context
     #                   )
+@login_required
+def urgent_applcations_page(requset, *args, **kwargs):
+    
+    if requset.method == "GET":
+        applications = UrgentApplications.objects.all()
+        if list(applications) == []:
+            return HttpResponse(content='Конента не найдено')
+        
+        else:
+            applications = UrgentApplications.objects.order_by("-created")
+            context = {
+                "content":applications
+                }
+            return render(request=requset, 
+                          template_name='main_app/urgent.html',
+                          context=context
+                          )
+        
+@login_required
+def create_uragent_application(request, *args, **kwargs):
+    if request.method == "GET":
+        pass
+
+
+    if request.method == "POST":
+        pass
+
+
 
 
 class CreateVacationView(CreateView, LoginRequiredMixin):
@@ -207,17 +234,25 @@ class RegisterCandidate(FormView):
     template_name = 'main_app/auth/register-candidate.html'
     
     redirect_authenticated_user = True
+    
+
+    def get_success_url(self) -> str:
+        return reverse_lazy("profile-page", self.request.user.id)
 
 
     def form_valid(self, form: Any) -> HttpResponse:
         user = form.save()
         
-        
+        print("user id: ",user)
         if user is not None:
             print(user.email)
             login(request=self.request, user=user)
-        return redirect('profile-page', self.request.user.id)
+        return super(RegisterCandidate, self).form_valid(form)
     
+
+    def form_invalid(self, form: Any) -> HttpResponse:
+        print("dude")
+        return super().form_invalid(form)
 
     def get(self, *args: str, **kwargs: Any) -> HttpResponse:
 
@@ -227,6 +262,22 @@ class RegisterCandidate(FormView):
     
         return super(RegisterCandidate, self).get(*args, **kwargs)
 
+
+def register_employer_view(request):
+    if request.method == 'POST':
+        print("POST запрос на register_employer_form", request.POST)
+        form = CreateEmployerAccountForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request=request, user=user)
+            return redirect('profile-page', user.id)
+        else:
+            print("Форма невалидна")
+    else:
+        form = CreateEmployerAccountForm()
+    return render(request, 'main_app/auth/register-employer.html', {'form': form})
+
+
 class RegisterEmployer(FormView):
     
     form_class = CreateEmployerAccountForm
@@ -235,14 +286,16 @@ class RegisterEmployer(FormView):
     redirect_authenticated_user = True
 
 
+    def get_success_url(self) -> str:
+        return reverse_lazy("profile-page", self.request.user.id)
+
     def form_valid(self, form: Any) -> HttpResponse:
         user = form.save()
-
+        print("user: ", user)
         if user is not None:
-            print(self.request.user.id)
             login(request=self.request, user=user)
             
-        return redirect('profile-page', self.request.user.id)
+        return redirect("profile-page", user.id)
     
 
     def get(self, *args: str, **kwargs: Any) -> HttpResponse:

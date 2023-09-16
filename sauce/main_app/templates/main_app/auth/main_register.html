@@ -3,19 +3,25 @@
 
 {% block title %} Регистрация {% endblock title %}
 
-{% block content %}
-
-<div class="dark-theme-icon-block">
-    <img class="dark-theme-icon" src="{% static 'main_app/src/img/moon.png' %}" alt="Темная тема" onclick="">
+{% block header %}
+<div class="go-back-arrow">
+    <div class="go-back-arrow">
+        <a href="{% url 'login' %}">
+            <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
+        </a>
+    </div>
+    <div class="dark-theme-icon-block">
+        <img class="dark-theme-icon" src="{% static 'main_app/src/img/moon.png' %}" alt="Темная тема" onclick="">
+    </div>
 </div>
+
+{% endblock %}
+
+{% block content %}
 
 <div class="account-type-container">
     <div class="account-type">
-        <div class="go-back-arrow">
-            <a href="{% url 'login' %}">
-                <img src="{% static 'main_app/src/img/gobackarrow.png' %}" alt="Вернуться назад">
-            </a>
-        </div>
+
         <div class="account-type-btn-block">
             <form action="{% url 'registration-employer' %}">
                 <button class="account-type-btn employer">

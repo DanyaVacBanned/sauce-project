@@ -45,7 +45,7 @@
     </div>
     <div class="main-page-navigation">
         <nav>
-            <ul>
+            <ul class="main-page-description-list-container">
                 <li class="nav-item">
                     {% if request.user.is_authenticated %}
                     <a href="{% url 'profile-page' id %}">Профиль</a>
@@ -53,7 +53,7 @@
                     <a href="{% url 'login' %}">Вход</a>
                     {% endif %}
                 </li>
-                <li class="nav-item line-break">
+                <li class="nav-item">
                     <a href="#vacations-block">Информация новости</a>
                 </li>
                 <li class="nav-item">
@@ -150,10 +150,6 @@
                                 - шиномонтажник
                                 </span>
                             </li>
-                        </ul>
-                    </div>
-                    <div class="vacations-description-text vacations-description-text-2">
-                        <ul>
                             <li class="vacations-description-text-item">
                                 <span>
                                 - автожестянщик
@@ -287,62 +283,6 @@
                 </div>
             </li>
         </ul>
-
-    </div>
-
-</section>
-
-
-
-<section>
-    <div class="contacts-block-container">
-        <div class="contacts-block">
-
-            <div class="contacts-block-title">
-                <h5>
-                    Контакты
-                </h5>
-            </div>
-
-            <div class="contacts-block-icons">
-                <div class="contacts-block-icon-item phone">
-                    <a href="tel:+79995202008">
-                        <img src="{% static 'main_app/src/img/phone.png' %}" alt="Телефон">
-                    </a>
-                                    
-                </div>
-
-                <div class="contacts-block-icon-item telegram">
-                    <a href="https://t.me/operses">
-                        <img src="{% static 'main_app/src/img/telegram.png' %}" alt="Телеграмм">
-                    </a>
-                </div>
-
-                <div class="contacts-block-icon-item whats-app">
-                    <a href="https://wa.me/79995202008">
-                        <img src="{% static 'main_app/src/img/whatsapp.png' %}" alt="Whats App">
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="contacts-block-info">
-                <div class="contacts-block-info-phone">
-                    <span>
-                        +7 (999) 520-20-08
-                    </span>
-                </div>
-                <div class="contacts-block-info-telegram">
-                    <span>
-                        @operses
-                    </span>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 </section>
-
-
 {% endblock content %}

@@ -7,7 +7,7 @@
 <div class="chat-log-block">
     <div id="chat-log">
         {% for message in chat_messages %}
-        <div>{{message}}</div>
+        <div>{{message.user}}:  {{message}}</div>
         {% endfor %}
     </div>
 </div>

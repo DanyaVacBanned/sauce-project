@@ -49,15 +49,15 @@ class ChatView(View):
 def rooms(request):
     if request.user.is_authenticated == False:
         return redirect('login')
-    return render(request, "chat/index.html")
-
-
-# def chat_room(request, room_name):
-#     if request.user.is_authenticated == False:
-#         return redirect('login')
     
-#     return render(request, "chat/room.html", {
-#         "room_name":room_name,
-#         "username": request.user.username
-#         }
-#         )
+    if request.method == "GET":
+        all_rooms = ChatRoom.objects.filter(current_user=request.user.id)
+        
+        if len(all_rooms) == 0:
+            context = {"dialogs":"None"}
+        else:
+            context = {"dialogs":all_rooms}
+
+        return render(request, "chat/index.html", context=context)
+
+

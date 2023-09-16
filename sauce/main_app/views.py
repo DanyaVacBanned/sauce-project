@@ -24,13 +24,15 @@ from .forms import (
     CreateCandidateAccountForm,
     ProfileUpdateForm,
     SauceLoginForm,
-    CreateVacationForm
+    CreateVacationForm,
+    UrgentAppCreateForm
 
     )
 from .models import (
     SauceUser, Employer, Candidate,
     Vacation, UrgentApplications
                      )
+
 
 
 
@@ -55,7 +57,7 @@ def register_page(request):
     template_name = 'main_app/auth/main_register.html'
     return render(request=request, template_name=template_name)
 
-# @login_required
+@login_required
 def profile_page(request, *args, **kwargs):
     template_name = 'main_app/profile/profile.html'
     employer = None
@@ -107,6 +109,22 @@ def update_profile(request, *args, **kwargs):
     #                   template_name=template_name,
     #                   context=context
     #                   )
+
+@login_required
+def create_urgent_app(request):
+    if not request.user.is_authenticated:
+        redirect('login')
+    if request.method == "GET":
+        form = UrgentAppCreateForm()
+        return render(request, "main_app/ads/create-urgent-app.html", {"form":form})
+
+    if request.method == "POST":
+        form = UrgentAppCreateForm(request.POST)
+        form.user = SauceUser.objects.get(id=request.user.id)
+        form.save()
+        redirect(request, "urgent-applications")
+
+
 @login_required
 def urgent_applcations_page(requset, *args, **kwargs):
     
@@ -121,7 +139,7 @@ def urgent_applcations_page(requset, *args, **kwargs):
                 "content":applications
                 }
             return render(request=requset, 
-                          template_name='main_app/urgent.html',
+                          template_name='main_app/ads/urgent.html',
                           context=context
                           )
         
@@ -168,27 +186,27 @@ class CreateVacationView(CreateView, LoginRequiredMixin):
 class CandidatesListView(DetailView, LoginRequiredMixin):
     def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
         
-        # if SauceUser.objects.get(id=request.user.id).role == "EMPLOYER":
+        if SauceUser.objects.get(id=request.user.id).role == "EMPLOYER":
             candidates = Candidate.objects.all()
             return render(
                 request=request,    
                 template_name="main_app/ads/candidates.html",
                 context={"candidates":candidates}
                 )
-        # else:
-        #     return redirect('vacations')
+        else:
+            return redirect('vacations')
         
 class AdsListView(DetailView, LoginRequiredMixin):
     def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
-        # if SauceUser.objects.get(id=request.user.id).role == "CANDIDATE":
+        if SauceUser.objects.get(id=request.user.id).role == "CANDIDATE":
             vacations = Vacation.objects.all()
             return render(
                 request=request,
                 template_name="main_app/ads/vacations.html",
                 context={'vacations':vacations}
                 )
-        # else:
-        #     return redirect('candidates')
+        else:
+            return redirect('candidates')
         
 
 
@@ -237,7 +255,7 @@ class RegisterCandidate(FormView):
     
 
     def get_success_url(self) -> str:
-        return reverse_lazy("profile-page", self.request.user.id)
+        return redirect("profile-page", self.request.user.id)
 
 
     def form_valid(self, form: Any) -> HttpResponse:

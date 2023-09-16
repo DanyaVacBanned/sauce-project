@@ -8,13 +8,24 @@
 
 {% block content %}
 <div class="room-names-wrapper">
-    <p>Диалоги</p>
-    <div class="room-name-block">
-        <input type="text" id="room-name-input" size="100">
-    </div>
-    <div class="room-name-submit-block">
-        <input type="button" value="Enter" id="room-name-submit">
-    </div>
+    <h1>Диалоги</h1>
+    {% if dialogs == "None" %}
+        <div class="no-dialogs-now">
+            <p class="no-dialogs-now-item">
+                У вас еще нет диалогов
+            </p>
+        </div>
+    {% else %}
+        {% for dialog in dialogs %}
+            
+            <div class="dialogs-list-item">
+                <p class="dialogs-list-item-user">
+                    {{dialog.user_2}}
+                </p>
+                <a href="{% url 'room' dialog.room_id %}" class="join-dialog-btn"></a>
+            </div>
+        {% endfor %}
+    {% endif %}
 </div>
 <script src="{% static 'chat/js/chatRooms.js' %}"></script>
 {% endblock content %}

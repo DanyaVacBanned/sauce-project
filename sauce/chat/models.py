@@ -5,8 +5,13 @@ from django.contrib.auth import get_user_model
 SauceUser = get_user_model()
 
 class ChatRoom(models.Model):
-    room_id = models.CharField(unique=True, max_length=250)
+    room_id = models.CharField(max_length=250)
+    current_user = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name="current_user")
+    user_1 = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name="user_1")
+    user_2 = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name="user_2")
 
+    def __str__(self):
+        return self.room_id
 
 class ChatMessage(models.Model):
     user = models.ForeignKey(

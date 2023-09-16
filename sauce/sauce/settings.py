@@ -5,12 +5,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = True
 
-# if DEBUG:
-#     from .config import TestConfig
-#     config_settings = TestConfig()
-# else:
-#     from .config import ProductionConfig
-#     config_settings = ProductionConfig()
+if DEBUG:
+    from .config import TestConfig
+    config_settings = TestConfig()
 
 
 
@@ -74,13 +71,25 @@ CHANNEL_LAYERS = {
     },
 }
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG is False:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config_settings.DBNAME,
+            'HOST': config_settings.DBHOST,
+            'PORT': config_settings.DBPORT,
+            'USER': config_settings.DBUSER,
+            'PASSWORD': config_settings.DBPASSWORD
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / "db.sqlite3",
+            
+        }
+    }
 
 ALLOWED_HOSTS = ['194.58.100.194','194-58-100-194.cloudvps.regruhosting.ru', '127.0.0.1', 'localhost']
 

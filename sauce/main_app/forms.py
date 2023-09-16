@@ -7,8 +7,33 @@ from django import forms
 
 from .models import (
     SauceUser, Employer, Candidate,
-    Vacation
+    Vacation, UrgentApplications
     )
+
+
+class UrgentAppCreateForm(forms.ModelForm):
+    title = forms.CharField(
+        max_length=150,
+        required=True,
+        help_text=False
+        )
+    description = forms.CharField(
+        required=True,
+        help_text=False
+        )
+    deadlines = forms.DateField(
+        required=True,
+        help_text=False
+        )
+    
+    class Meta:
+        model = UrgentApplications
+        fields = [
+            "title",
+            "description",
+            "deadlines",
+            "user"
+            ]
 
 
 class CreateVacationForm(forms.ModelForm):

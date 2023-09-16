@@ -11,7 +11,9 @@ from .views import (
     CreateVacationView,
     register_page, main_page,
     profile_page, update_profile,
-    register_employer_view
+    register_employer_view,
+    urgent_applcations_page,
+    create_urgent_app
     
                    )
 
@@ -31,7 +33,10 @@ urlpatterns = [
 
     path('candidates/', view=CandidatesListView.as_view(), name='candidates'),
     path('vacations/', view=AdsListView.as_view(), name="vacations"),
-    path('vacations/create-vacation/', view=CreateVacationView.as_view(), name='create-vacation')
+    path('vacations/create-vacation/', view=CreateVacationView.as_view(), name='create-vacation'),
+
+    path('urgent-applications/', view=urgent_applcations_page, name='urgent-applications'),
+    path('urgent-applications/create', view=create_urgent_app, name='urgent-create')
     ]
 
 

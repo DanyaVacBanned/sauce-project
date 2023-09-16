@@ -1,0 +1,35 @@
+{% extends 'main_app/layout/base.html' %}
+
+{% block header %}
+Срочные заявки
+{% endblock header %}
+
+{% block content %}
+
+<div class="create-new-urgent-application">
+    <a href="{% url 'urgent-create' %}" class="create-new-urgent-application-btn">
+        Разместить заявку
+    </a>
+</div>
+
+<div class="urgent-applications-list-block">
+    {% for app in content %}
+        <div class="urgent-applications-card">
+            <p class="urgent-applications-card-title">
+                {{app.title}}
+            </p>
+
+            <p class="urgent-applications-card-description">
+                {{app.description}}
+            </p>
+            <p class="urgent-applications-card-deadlines">
+                {{app.deadlines}}
+            </p>
+            <p class="urgent-applications-card-user">
+                {{app.user}}
+            </p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

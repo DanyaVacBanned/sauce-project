@@ -31,10 +31,11 @@ class UrgentAppCreateForm(forms.ModelForm):
         fields = [
             "title",
             "description",
-            "deadlines",
-            "user"
+            "deadlines",  
             ]
 
+    
+        
 
 class CreateVacationForm(forms.ModelForm):
     title = forms.CharField(
@@ -102,10 +103,11 @@ class CreateEmployerAccountForm(UserCreationForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
-    # email = forms.EmailField()    
-
     class Meta:
         model = SauceUser
-        fields = ['username', 'second_name', 'email', 'phone_number','city', 'citizenship', 'profile_description','profile_image']
+        fields = ['username', 'second_name', 'email', 'phone_number','city', 'citizenship', 'profile_description']
+
+
         
+    
     

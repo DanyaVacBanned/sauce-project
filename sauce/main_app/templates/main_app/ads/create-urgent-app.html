@@ -1,1 +1,31 @@
 {% extends 'main_app/layout/base.html' %}
+
+
+{% block title %}
+
+Размещение заявки
+
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="create-urgent-application-form">
+    <form method="post">
+        {% csrf_token %}
+        <div class="create-urgent-application-form-title">
+            <input type="text" name="title" required />
+        </div>
+        <div class="create-urgent-application-form-description">
+            <textarea name="description" cols="30" rows="10" required></textarea>
+        </div>
+        <div class="create-urgent-application-form-deadlines">
+            <input type="date" name="deadlines" required />
+        </div>
+        <button class="create-urgent-application-submit-btn">
+            Разместить
+        </button>
+    </form>
+</div>
+
+{% endblock content %}

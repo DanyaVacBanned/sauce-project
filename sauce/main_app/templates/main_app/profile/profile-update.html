@@ -12,6 +12,7 @@
     
 
     <form method="post">
+        {% csrf_token %}
         <div class="user-info-title">
             <div class="go-back-arrow">
               <a href="{% url 'profile-page' request.user.id%}">
@@ -22,7 +23,6 @@
                 Редактирование
             </h2>
         </div>
-        {% csrf_token %}
 
         <div class="profile-update-form-group">
             <div class="user-info">
@@ -47,10 +47,12 @@
                 О компании: {{update_form.profile_description}}
             </div>
             
+
+             <!-- {{update_form.as_div}} -->
         </div>
         <div class="profile-update-form-button">
             
-            <button class="submit-btn">
+            <button type="submit" class="submit-btn">
                 Обновить
             </button>
         </div>

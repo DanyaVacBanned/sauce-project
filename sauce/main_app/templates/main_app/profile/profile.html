@@ -7,7 +7,6 @@
 {% block content %} 
 
 <div class="user-info-block">
-
     <div class="user-info-title">
         <h2>
             Личный кабинет
@@ -17,16 +16,16 @@
         <div class="profile-image">
             <img src="{{ user_info.profile_image.url }}" alt="">
         </div>
+        {% if request.user.id == user_info.id %}
         <div class="user-info-edit-btn">
-            <!-- <a href="{% url 'update-profile-page' request.user.id %}">
-                Редактировать
-            </a> -->
             <form action="{% url 'update-profile-page' request.user.id %}" method="get">
                 <button class="user-info-edit-btn">
                     Редактировать
                 </button>
             </form>
+
         </div>
+        {% endif %}
 
         {% if user_info.role == "EMPLOYER" %}
         

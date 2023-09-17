@@ -6,7 +6,6 @@ SauceUser = get_user_model()
 
 class ChatRoom(models.Model):
     room_id = models.CharField(max_length=250)
-    current_user = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name="current_user")
     user_1 = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name="user_1")
     user_2 = models.ForeignKey(SauceUser, on_delete=models.CASCADE, related_name="user_2")
 

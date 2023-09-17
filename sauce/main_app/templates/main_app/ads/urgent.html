@@ -11,7 +11,7 @@
         Разместить заявку
     </a>
 </div>
-
+{% if content %}
 <div class="urgent-applications-list-block">
     {% for app in content %}
         <div class="urgent-applications-card">
@@ -28,8 +28,20 @@
             <p class="urgent-applications-card-user">
                 {{app.user}}
             </p>
+            {% if request.user.id != app.user.id %}
+            <p class="urgent-applications-card-send-message">
+                <a href="{% url 'create-chat-room' app.user.id%}" class="send-message-btn">
+                    Написать
+                </a>
+            </p>
+            {% endif %}
         </div>
     {% endfor %}
 </div>
+{% else %}
+
+<h2>Срочных заявок нет</h2>
+
+{% endif %}
 
 {% endblock content %}

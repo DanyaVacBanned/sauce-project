@@ -14,13 +14,16 @@ def get_default_profile_image():
 
 
 class SauceUserManager(BaseUserManager):
-  def create_user(self, email, username=None, password=None):
+  def create_user(self, email, username=None, password=None, is_staff = False, is_admin = False, is_superuser = False):
     if email is None:
       raise ValueError("Email не введен")
 
     user = self.model(
       email=self.normalize_email(email),
-      username=username
+      username=username,
+      is_admin = is_admin,
+      is_staff = is_staff,
+      is_superuser = is_superuser
     )
     user.set_password(password)
     user.save(using=self._db)
@@ -31,14 +34,11 @@ class SauceUserManager(BaseUserManager):
       email=self.normalize_email(email),
       username=username,
       password=password,
-      is_admin=True,
-      is_staff=True,
-      is_superuser=True
+      is_admin = True,
+      is_staff = True,
+      is_superuser = True
     )
-    user.is_admin = True
-    user.is_staff = True
-    user.is_superuser = True
-    user.save(using=self._db)
+    
     return user
 
 
@@ -186,4 +186,16 @@ class UrgentApplications(models.Model):
   title = models.CharField(max_length=150)
   description = models.TextField()
   deadlines = models.DateField()
+  created = models.DateTimeField(auto_now_add=True)
+
+
+class Comments(models.Model):
+  post = models.ForeignKey(Vacation, models.CASCADE, related_name='post')
+  text = models.TextField()
+  created = models.DateTimeField(auto_now_add=True)
+
+
+class News(models.Model):
+  title = models.CharField(max_length=150)
+  text = models.TextField()
   created = models.DateTimeField(auto_now_add=True)

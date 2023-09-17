@@ -19,7 +19,7 @@
 <body>
 
     <div class="header-block">
-
+        
         {% block navbar %}
         {% if request.user.is_authenticated %}
         <div class="nav-bar">
@@ -35,28 +35,27 @@
                             Сообщения
                         </a>
                     </li>
+                    {% if request.user.role == "EMPLOYER" %}
                     <li class="nav-bar-item">
                         <a href="{% url 'candidates' %}">
                             Специалисты
                         </a>
                     </li>
+                    {% else %}
                     <li class="nav-bar-item">
                         <a href="{% url 'vacations' %}">
                             Объявления
                         </a>
                     </li>
+                    {% endif %}
                     <li class="nav-bar-item">
-                        <a href="">
+                        <a href="{% url 'urgent-applications' %}">
                             Срочные заявки
                         </a>
                     </li>
+                    
                     <li class="nav-bar-item">
-                        <a href="">
-                            Форум
-                        </a>
-                    </li>
-                    <li class="nav-bar-item">
-                        <a href="">
+                        <a href="{% url 'news' %}">
                             Новости и информация
                         </a>
                     </li>

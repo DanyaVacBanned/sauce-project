@@ -10,7 +10,7 @@
     {% for candidate in candidates %}
     
     <div class="candidate-card">
-        <a href="{% url 'profile-page' candidate.id %}">
+        <a href="{% url 'user-profile' candidate.id %}">
             <div class="candidate-photo">
                 <img src="{{candidate.profile_image.url}}" alt="Фото работодателя">
             </div>

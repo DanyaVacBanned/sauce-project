@@ -9,22 +9,30 @@
 {% block content %}
 <div class="room-names-wrapper">
     <h1>Диалоги</h1>
-    {% if dialogs == "None" %}
+    {% if dialogs %}
+        {% for dialog in dialogs %}
+        <div class="dialogs-list-item">
+            <p class="dialogs-list-item-user">
+                {% if request.user.id == dialog.user_2.id %}
+                    {{dialog.user_1}}
+                {% else %}
+                    {{dialog.user_2}}
+                {% endif %}
+                <p class="dialogs-list-item-room-link">
+                    <a class="join-dialog" href="{% url 'room' dialog.room_id %}">
+                        Присоедениться
+                    </a>
+                </p>
+            </p>
+            
+        </div>
+        {% endfor %}
+    {% else %}
         <div class="no-dialogs-now">
             <p class="no-dialogs-now-item">
                 У вас еще нет диалогов
             </p>
         </div>
-    {% else %}
-        {% for dialog in dialogs %}
-            
-            <div class="dialogs-list-item">
-                <p class="dialogs-list-item-user">
-                    {{dialog.user_2}}
-                </p>
-                <a href="{% url 'room' dialog.room_id %}" class="join-dialog-btn"></a>
-            </div>
-        {% endfor %}
     {% endif %}
 </div>
 <script src="{% static 'chat/js/chatRooms.js' %}"></script>
